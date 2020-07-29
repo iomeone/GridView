@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="WElupj" name="GirdView" projectType="guiapp" jucerVersion="5.4.5">
+  <MAINGROUP id="AOExe3" name="GirdView">
+    <GROUP id="{3514E724-2336-DDE3-68FC-E1F4722008A1}" name="Source">
+      <FILE id="cHiGjO" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="OXQLp3" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+      <FILE id="l4EOt4" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <VS2019 targetFolder="Builds/VisualStudio2019">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../dev/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2019>
+    <VS2017 targetFolder="Builds/VisualStudio2017">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../dev/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../dev/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2017>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <WINDOWS/>
+  </LIVE_SETTINGS>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+</JUCERPROJECT>
