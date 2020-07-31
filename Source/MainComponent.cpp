@@ -158,10 +158,12 @@ void MainComponent::resized()
 	fb.justifyContent = juce::FlexBox::JustifyContent::spaceAround;      // [3]
 	fb.alignContent = juce::FlexBox::AlignContent::center;       // [4]
 
-
+	//auto leftNotUse_TopLeft = topRect.removeFromLeft(256);
+	auto rightNotUse_TopLeft = topRect.removeFromRight(256);
+	auto menuArea = topRect.removeFromRight(600);
 
 	float menuBtnHeight = topRect.getHeight() * 2.f/4.f;
-	fb.items.add(juce::FlexItem(100, menuBtnHeight));
+	/*fb.items.add(juce::FlexItem(100, menuBtnHeight));*/
 
 	// add menu->about
 	int rw, rh;
@@ -193,9 +195,9 @@ void MainComponent::resized()
 	fb.items.add(fi);
 
 
-	fb.items.add(juce::FlexItem(100, menuBtnHeight));
+	//fb.items.add(juce::FlexItem(100, menuBtnHeight));
 
-	fb.performLayout(topRect);                  // [6]
+	fb.performLayout(menuArea);                  // [6]
 
 }
 
