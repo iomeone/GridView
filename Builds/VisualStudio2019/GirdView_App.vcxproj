@@ -138,6 +138,11 @@
     <Lib/>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\SmoothScrollBar.cpp"/>
+    <ClCompile Include="..\..\Source\StackHolder.cpp"/>
+    <ClCompile Include="..\..\Source\StackManager.cpp"/>
+    <ClCompile Include="..\..\Source\StackPanel.cpp"/>
+    <ClCompile Include="..\..\Source\TComponent.cpp"/>
     <ClCompile Include="..\..\Source\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
     <ClCompile Include="..\..\..\..\dev\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
@@ -1858,6 +1863,12 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\Component.h"/>
+    <ClInclude Include="..\..\Source\SmoothScrollBar.h"/>
+    <ClInclude Include="..\..\Source\StackHolder.h"/>
+    <ClInclude Include="..\..\Source\StackManager.h"/>
+    <ClInclude Include="..\..\Source\StackPanel.h"/>
+    <ClInclude Include="..\..\Source\TComponent.h"/>
     <ClInclude Include="..\..\Source\MainComponent.h"/>
     <ClInclude Include="..\..\..\..\dev\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h"/>
     <ClInclude Include="..\..\..\..\dev\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.h"/>
