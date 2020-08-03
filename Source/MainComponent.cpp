@@ -95,6 +95,7 @@ MainComponent::MainComponent()// : manager(false)
 	addAndMakeVisible(&c1);
 	addAndMakeVisible(&c2);
 	addAndMakeVisible(&c3);
+ 
 
 	setSize(1920 * 0.75, 1200 * 0.75);
 }
@@ -115,6 +116,14 @@ void MainComponent::paint (Graphics& g)
     //g.setFont (Font (16.0f));
     //g.setColour (Colours::white);
     //g.drawText ("Hello World!", getLocalBounds(), Justification::centred, true);
+
+
+	{
+		int x = 0, y = menuHeight, width = getWidth(), height = 400;
+		Colour fillColour = Colours::black;
+		g.setColour(fillColour);
+		g.fillRect(x, y, width, height);
+	}
 }
 
 void MainComponent::resized()
@@ -220,11 +229,16 @@ void MainComponent::resized()
 
 
 	
+	float difficultyWidth = 780.f;
 	auto difficultyArea = r.removeFromTop(75.f);
+	float leftNotUse = (getWidth() - difficultyWidth) / 2.0;
+	difficultyArea.removeFromLeft(leftNotUse);
+	difficultyArea.removeFromRight(leftNotUse);
+
 	juce::FlexBox fbDifficulty;                                               // [1]
 	fbDifficulty.flexDirection = juce::FlexBox::Direction::row;
 	fbDifficulty.flexWrap = juce::FlexBox::Wrap::wrap;                        // [2]
-	fbDifficulty.justifyContent = juce::FlexBox::JustifyContent::spaceAround;      // [3]
+	fbDifficulty.justifyContent = juce::FlexBox::JustifyContent::spaceBetween;      // [3]
 	fbDifficulty.alignContent = juce::FlexBox::AlignContent::center;       // [4]
 
 	fi = juce::FlexItem(c1).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);

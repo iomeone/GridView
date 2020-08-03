@@ -81,6 +81,14 @@ TComponent::TComponent ()
 	_starBtn6->setRadioGroupId(23456);
 
 	addAndMakeVisible(_starBtn6.get());
+
+	_diffiText.reset(new juce::Label("lbldiff", _s));
+	auto f = _diffiText->getFont();
+
+	f.setSizeAndStyle(30, Font::FontStyleFlags::bold, 1.0, 0);
+	_diffiText->setFont(f);
+	_diffiText->setJustificationType(Justification::centred);
+	addAndMakeVisible(_diffiText.get());
     //[/Constructor_pre]
 
 
@@ -119,9 +127,10 @@ void TComponent::paint (Graphics& g)
 
     //[/UserPrePaint]
 
-    g.fillAll (Colour (0xff9fa149));
+    g.fillAll (Colours::black);
 
     //[UserPaint] Add your own custom painting code here..
+
     //[/UserPaint]
 }
 
@@ -131,8 +140,9 @@ void TComponent::resized()
     //[/UserPreResize]
 
     //[UserResized] Add your own custom resize handling here..
+	int difftextheight = 30;
 	int perWidth = proportionOfWidth(0.1666667);
-	int perheight = getHeight();
+	int perheight = getHeight()- difftextheight;
 	int i = 0;
 	_starBtn1->setBounds(0 + i * perWidth, 0, perWidth, perheight);
 
@@ -150,6 +160,8 @@ void TComponent::resized()
 
 	i++;
 	_starBtn6->setBounds(0 + i * perWidth, 0, perWidth, perheight);
+
+	_diffiText->setBounds(0, perheight, getWidth(), difftextheight);
     //[/UserResized]
 }
 
@@ -172,7 +184,7 @@ BEGIN_JUCER_METADATA
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
                  fixedSize="0" initialWidth="600" initialHeight="400">
-  <BACKGROUND backgroundColour="ff9fa149"/>
+  <BACKGROUND backgroundColour="ff000000"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

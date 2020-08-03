@@ -58,6 +58,9 @@ private:
 	std::unique_ptr< DrawableButton> _starBtn4;
 	std::unique_ptr< DrawableButton> _starBtn5;
 	std::unique_ptr< DrawableButton> _starBtn6;
+	
+	std::unique_ptr<Label> _diffiText;
+	juce::String _s{ "unknow" };
     //[/UserVariables]
 
     //==============================================================================
