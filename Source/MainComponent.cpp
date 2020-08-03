@@ -50,13 +50,22 @@ MainComponent::MainComponent()// : manager(false)
 	//Icon->setColour(juce::Label::outlineColourId, juce::Colours::black);
 	addAndMakeVisible(Icon.get());
 
+
+	//book library
+	
+	bookLibrary.reset(new juce::Label("bk", "BOOK LIBRARY"));
+	f = Icon->getFont();
+	f.setSizeAndStyle(fontSize , Font::FontStyleFlags::bold, 1.0, 0);
+	bookLibrary->setFont(f);
+	bookLibrary->setJustificationType(Justification::centred);
+	bookLibrary->setColour(juce::Label::ColourIds::backgroundColourId, juce::Colours::black);
+	//Icon->setBorderSize(juce::BorderSize<int>(5));  //need set outline width
+	//Icon->setColour(juce::Label::outlineColourId, juce::Colours::black);
+	addAndMakeVisible(bookLibrary.get());
+
+
 	// menu
-
-
-
 	//strWidthMap[] = 
-	
-	
 	tbAbout.reset(new juce::TextButton(juce::String("ABOUT")));
 	addAndMakeVisible(tbAbout.get());
 
@@ -82,6 +91,10 @@ MainComponent::MainComponent()// : manager(false)
 	//addAndMakeVisible(buttons.add(new juce::TextButton(juce::String("CONNECT"))));
 	//addAndMakeVisible(buttons.add(new juce::TextButton(juce::String("PRO"))));
 
+
+	addAndMakeVisible(&c1);
+	addAndMakeVisible(&c2);
+	addAndMakeVisible(&c3);
 
 	setSize(1920 * 0.75, 1200 * 0.75);
 }
@@ -199,6 +212,34 @@ void MainComponent::resized()
 
 	fb.performLayout(menuArea);                  // [6]
 
+
+
+	auto bookLibraryRect = r.removeFromTop(105.f );
+	bookLibrary->setBounds(bookLibraryRect.toNearestInt());
+
+
+
+	
+	auto difficultyArea = r.removeFromTop(75.f);
+	juce::FlexBox fbDifficulty;                                               // [1]
+	fbDifficulty.flexDirection = juce::FlexBox::Direction::row;
+	fbDifficulty.flexWrap = juce::FlexBox::Wrap::wrap;                        // [2]
+	fbDifficulty.justifyContent = juce::FlexBox::JustifyContent::spaceAround;      // [3]
+	fbDifficulty.alignContent = juce::FlexBox::AlignContent::center;       // [4]
+
+	fi = juce::FlexItem(c1).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
+	fbDifficulty.items.add(fi);
+
+	fi = juce::FlexItem(c2).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
+	fbDifficulty.items.add(fi);
+
+	fi = juce::FlexItem(c3).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
+	fbDifficulty.items.add(fi);
+
+	fbDifficulty.performLayout(difficultyArea);
+	//c1.setBounds(r.removeFromTop(130).toNearestInt());
+
+	
 }
 
 void MainComponent::TryToFit(juce::AttributedString & text, int tryWidth, int tryHeight, int & resultWidth, int & resultHeight)

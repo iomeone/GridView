@@ -33,8 +33,7 @@
     Describe your class and how it works here!
                                                                     //[/Comments]
 */
-class TComponent  : public Component,
-                    public Button::Listener
+class TComponent  : public Component
 {
 public:
     //==============================================================================
@@ -47,16 +46,21 @@ public:
 
     void paint (Graphics& g) override;
     void resized() override;
-    void buttonClicked (Button* buttonThatWasClicked) override;
 
 
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
+	std::unique_ptr< DrawableButton> _starBtn1;
+	std::unique_ptr< DrawableButton> _starBtn2;
+	std::unique_ptr< DrawableButton> _starBtn3;
+
+	std::unique_ptr< DrawableButton> _starBtn4;
+	std::unique_ptr< DrawableButton> _starBtn5;
+	std::unique_ptr< DrawableButton> _starBtn6;
     //[/UserVariables]
 
     //==============================================================================
-    std::unique_ptr<TextButton> textButton;
 
 
     //==============================================================================

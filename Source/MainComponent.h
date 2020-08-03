@@ -40,7 +40,9 @@ private:
 
 	//bool firstCall{ true };
 	//StackManager manager;
-	TComponent c;
+	TComponent c1;
+	TComponent c2;
+	TComponent c3;
 
 	float menuHeight{ 0.f };
 	std::unique_ptr< juce::Label> Icon;
@@ -55,6 +57,9 @@ private:
 	std::unique_ptr < TextButton > tbPro;
 
 	juce::HashMap<juce::String, int> strWidthMap;
+
+
+	std::unique_ptr< juce::Label> bookLibrary;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
