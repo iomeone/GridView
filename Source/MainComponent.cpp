@@ -9,7 +9,7 @@
 #include "MainComponent.h"
 //https://dribbble.com/srioz
 //==============================================================================
-MainComponent::MainComponent()// : manager(false)
+MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD")// : manager(false)
 {
    
 
