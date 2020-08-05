@@ -93,8 +93,8 @@ MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD")// : manage
 
 
 	addAndMakeVisible(&c1);
-	addAndMakeVisible(&c2);
-	addAndMakeVisible(&c3);
+	//addAndMakeVisible(&c2);
+	//addAndMakeVisible(&c3);
  
 
 	setSize(1920 * 0.75, 1200 * 0.75);
@@ -238,20 +238,29 @@ void MainComponent::resized()
 	juce::FlexBox fbDifficulty;                                               // [1]
 	fbDifficulty.flexDirection = juce::FlexBox::Direction::row;
 	fbDifficulty.flexWrap = juce::FlexBox::Wrap::wrap;                        // [2]
-	fbDifficulty.justifyContent = juce::FlexBox::JustifyContent::spaceBetween;      // [3]
+	fbDifficulty.justifyContent = juce::FlexBox::JustifyContent::center;      // [3]
 	fbDifficulty.alignContent = juce::FlexBox::AlignContent::center;       // [4]
 
 	fi = juce::FlexItem(c1).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
 	fbDifficulty.items.add(fi);
 
-	fi = juce::FlexItem(c2).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
-	fbDifficulty.items.add(fi);
+	//fi = juce::FlexItem(c2).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
+	//fbDifficulty.items.add(fi);
 
-	fi = juce::FlexItem(c3).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
-	fbDifficulty.items.add(fi);
+	//fi = juce::FlexItem(c3).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
+	//fbDifficulty.items.add(fi);
 
 	fbDifficulty.performLayout(difficultyArea);
-	//c1.setBounds(r.removeFromTop(130).toNearestInt());
+
+
+
+	//////////////////////////////////
+	//
+	//
+	//style
+	//////////////////////////////////
+
+	
 
 	
 }
