@@ -11,6 +11,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "TComponent.h"
 #include "StackManager.h"
+#include "TStyleComponent.h"
 
 //==============================================================================
 /*
@@ -44,8 +45,12 @@ private:
 	TComponent c2;
 	TComponent c3;
 
+	TStyleComponent stylecom;
+
 	float menuHeight{ 0.f };
 	std::unique_ptr< juce::Label> Icon;
+
+	//std::unique_ptr<TStyleComponent>  styleCom;
 
 	std::unique_ptr< juce::Label> testlbl;
 	float fontSize{ 100.0 };

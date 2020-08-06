@@ -33,15 +33,36 @@
     Describe your class and how it works here!
                                                                     //[/Comments]
 */
-class TComponent  : public Component
+class TStyleComponent  : public Component
 {
 public:
     //==============================================================================
-    TComponent (String s);
-    ~TComponent();
+    TStyleComponent (String styleText);
+    ~TStyleComponent();
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
+	int getIdealWidth()
+	{
+		juce::AttributedString attributedText;
+		attributedText.append(_lblStyleText->getText(), _lblStyleText->getFont());
+		attributedText.setJustification(juce::Justification::left);
+		int textWidth;
+		int textHeight;
+		TryToFit(attributedText, getWidth(), getHeight(), textWidth, textHeight);
+
+		return int(_expectHeight * 1.5 + textWidth) + 1;
+	}
+
+
+	void TryToFit(juce::AttributedString & text, int tryWidth, int tryHeight, int & resultWidth, int & resultHeight)
+	{
+		juce::TextLayout textLayout;
+		textLayout.createLayoutWithBalancedLineLengths(text, tryWidth, tryHeight);
+		resultWidth = (int)ceil(textLayout.getWidth());
+		resultHeight = (int)ceil(textLayout.getHeight());
+	}
+
     //[/UserMethods]
 
     void paint (Graphics& g) override;
@@ -51,25 +72,20 @@ public:
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
-	std::unique_ptr< DrawableButton> _starBtn1;
-	std::unique_ptr< DrawableButton> _starBtn2;
-	std::unique_ptr< DrawableButton> _starBtn3;
+	juce::Rectangle<float> _circleRect;
+	juce::Rectangle<int> _lableRect;
+	std::unique_ptr<juce::Label>  _lblStyleText;
+	String _styleText;
 
-	std::unique_ptr< DrawableButton> _starBtn4;
-	std::unique_ptr< DrawableButton> _starBtn5;
-	std::unique_ptr< DrawableButton> _starBtn6;
-
-	std::unique_ptr<Label> _diffiText;
-	juce::String _s{ "unknow" };
-
-
+public:
+	float _expectHeight{ 40 };
     //[/UserVariables]
 
     //==============================================================================
 
 
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TComponent)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TStyleComponent)
 };
 
 //[EndFile] You can add extra defines here...

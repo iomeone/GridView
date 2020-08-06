@@ -397,6 +397,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\TStyleComponent.cpp">
+      <Filter>GirdView\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\SmoothScrollBar.cpp">
       <Filter>GirdView\Source</Filter>
     </ClCompile>
@@ -2262,6 +2265,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\TStyleComponent.h">
+      <Filter>GirdView\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Component.h">
       <Filter>GirdView\Source</Filter>
     </ClInclude>

@@ -9,7 +9,7 @@
 #include "MainComponent.h"
 //https://dribbble.com/srioz
 //==============================================================================
-MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD")// : manager(false)
+MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD"), stylecom("teststyle123123123")// : manager(false)
 {
    
 
@@ -97,6 +97,8 @@ MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD")// : manage
 	//addAndMakeVisible(&c3);
  
 
+	addAndMakeVisible(&stylecom);
+
 	setSize(1920 * 0.75, 1200 * 0.75);
 }
 
@@ -132,28 +134,15 @@ void MainComponent::resized()
     // If you add any child components, this is where you should
     // update their positions.
 
-	//manager.setBounds(0, 0, getWidth(), getHeight());
-	//if (firstCall)
-	//{
-		//firstCall = false;
-		//manager.setStackedComponent(new TComponent(), 0, true, 380);
-		//manager.setStackedComponent(new TComponent(), 0, true, 380);
-		//manager.setStackedComponent(new TComponent(), 0, true, 380);
-		//manager.setStackedComponent(new TComponent(), 0, true, 380);
-		//manager->setFixedComponent (new ZeroComponent("Fixed Panel"), 0, false, true, 200);
-		/*manager->setStackedComponent(midiWindow->midiInputSelector, 0, true, 150);
-		manager->setStackedComponent(midiWindow->midiOutputSelector, 0, true, 150);
-		manager->setStackedComponent(_keymapeditor, 0, true, 1850);
+	auto r = getLocalBounds().toFloat();
 
-		manager->setStackedComponent(midiWindow->midiMonitor, 0, true, 150);*/
-		//manager->setStackedComponent (new ZeroComponent("Stacked Panel #3"), 0, true, 100);
-		//manager->setStackedComponent (new ZeroComponent("Stacked Panel #4"), 0, true, 100);
-		//manager->setStackedComponent (new ZeroComponent("Stacked Panel #5"), 0, true, 50);
-	//}
+	auto sr = r.removeFromTop(40).toNearestInt();
+	stylecom.setBounds(sr.getX(), sr.getY(), stylecom.getIdealWidth(), stylecom._expectHeight);
+	
 
-	//first we add the logo text 
 
-		auto r = getLocalBounds().toFloat();
+	return;
+		
 
 		juce::AttributedString attributedText;
 		attributedText.append(Icon->getText(), Icon->getFont());
@@ -259,6 +248,7 @@ void MainComponent::resized()
 	//
 	//style
 	//////////////////////////////////
+	//height 40      lable width = whole width - 60
 
 	
 

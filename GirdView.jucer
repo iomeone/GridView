@@ -3,6 +3,10 @@
 <JUCERPROJECT id="WElupj" name="GirdView" projectType="guiapp" jucerVersion="5.4.5">
   <MAINGROUP id="AOExe3" name="GirdView">
     <GROUP id="{3514E724-2336-DDE3-68FC-E1F4722008A1}" name="Source">
+      <FILE id="GFgx6L" name="TStyleComponent.cpp" compile="1" resource="0"
+            file="Source/TStyleComponent.cpp"/>
+      <FILE id="PKLaRw" name="TStyleComponent.h" compile="0" resource="0"
+            file="Source/TStyleComponent.h"/>
       <FILE id="gteGJ6" name="Component.h" compile="0" resource="0" file="Source/Component.h"/>
       <FILE id="QnJcFI" name="SmoothScrollBar.cpp" compile="1" resource="0"
             file="Source/SmoothScrollBar.cpp"/>
