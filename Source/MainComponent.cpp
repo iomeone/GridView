@@ -122,7 +122,7 @@ MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD")//, styleco
 
 	for (int i = 0; i < styles2.size(); ++i)
 	{
-		addAndMakeVisible(styles2[i]);
+		//addAndMakeVisible(styles2[i]);
 	}
 
 	setSize(1920 * 0.75, 1200 * 0.75);
@@ -190,8 +190,8 @@ void MainComponent::resized()
 
 	for (int i = 0; i < 10; i++)
 	{
-		auto idealWidth = styles1[i]->getIdealWidth();
-		auto fis = juce::FlexItem(c1).withMinWidth(idealWidth).withMaxWidth(idealWidth).withMinHeight(TStyleComponent::_expectHeight).withMaxHeight(TStyleComponent::_expectHeight);
+		auto idealWidth = styles1[i]->getIdealWidth() ;
+		auto fis = juce::FlexItem(*styles1[i]).withMinWidth(idealWidth).withMaxWidth(idealWidth).withMinHeight(TStyleComponent::_expectHeight).withMaxHeight(TStyleComponent::_expectHeight);
 		fbStyles1.items.add(fis);
 	}
 
@@ -325,8 +325,8 @@ void MainComponent::TryToFit(juce::AttributedString & text, int tryWidth, int tr
 {
 	juce::TextLayout textLayout;
 	textLayout.createLayoutWithBalancedLineLengths(text, tryWidth, tryHeight);
-	resultWidth = (int)ceil(textLayout.getWidth());
-	resultHeight = (int)ceil(textLayout.getHeight());
+	resultWidth = (int)textLayout.getWidth() + 1;
+	resultHeight = (int)textLayout.getHeight() + 1;
 }
 
 

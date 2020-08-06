@@ -94,7 +94,9 @@ void TStyleComponent::resized()
 
 	_circleRect.setBounds(hq, hq, hq*2.f, hq*2.f);
 
-	_lableRect.setBounds(hq * 4.f, hq, w - hq * 6.0f, hq *2.f);
+	auto bd = _lblStyleText->getBorderSize();
+
+	_lableRect.setBounds(hq * 4.f, hq-bd.getTop(), w - hq * 6.0f, hq *2.f + bd.getBottom() + bd.getTop());
 
 	_lblStyleText->setBounds(_lableRect);
     //[/UserResized]

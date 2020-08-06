@@ -51,7 +51,8 @@ public:
 		int textHeight;
 		TryToFit(attributedText, getWidth(), getHeight(), textWidth, textHeight);
 
-		return int(_expectHeight * 1.5 + textWidth) + 1;
+		auto bd = _lblStyleText->getBorderSize();
+		return int(_expectHeight * 1.5 + textWidth) + 1 + bd.getLeft() + bd.getRight() ;
 	}
 
 
@@ -59,8 +60,8 @@ public:
 	{
 		juce::TextLayout textLayout;
 		textLayout.createLayoutWithBalancedLineLengths(text, tryWidth, tryHeight);
-		resultWidth = (int)ceil(textLayout.getWidth());
-		resultHeight = (int)ceil(textLayout.getHeight());
+		resultWidth = (int)textLayout.getWidth() + 1;
+		resultHeight = (int)textLayout.getHeight() + 1;
 	}
 
     //[/UserMethods]
