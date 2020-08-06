@@ -45,7 +45,10 @@ private:
 	TComponent c2;
 	TComponent c3;
 
-	TStyleComponent stylecom;
+	//TStyleComponent stylecom;
+	juce::OwnedArray< TStyleComponent> styles1;
+
+	juce::OwnedArray< TStyleComponent> styles2;
 
 	float menuHeight{ 0.f };
 	std::unique_ptr< juce::Label> Icon;

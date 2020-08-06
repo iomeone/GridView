@@ -24,6 +24,7 @@
 
 
 //[MiscUserDefs] You can add your own user definitions and misc code here...
+float TStyleComponent::_expectHeight = 40;
 //[/MiscUserDefs]
 
 //==============================================================================

@@ -9,7 +9,7 @@
 #include "MainComponent.h"
 //https://dribbble.com/srioz
 //==============================================================================
-MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD"), stylecom("teststyle123123123")// : manager(false)
+MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD")//, stylecom("teststyle123123123")// : manager(false)
 {
    
 
@@ -97,7 +97,33 @@ MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD"), stylecom(
 	//addAndMakeVisible(&c3);
  
 
-	addAndMakeVisible(&stylecom);
+	//addAndMakeVisible(&stylecom);
+
+	for (int i = 0; i < 10; i++)
+	{
+		styles1.add(new TStyleComponent(   String::repeatedString(String(i), i % 10 + 1)
+		));
+	}
+
+	for (int i = 0; i < 20; i++)
+	{
+		styles2.add(new TStyleComponent(String::repeatedString(String(i), i % 10 + 1)
+		));
+	}
+
+	for (int i = 0; i < styles1.size(); ++i)
+	{
+		addAndMakeVisible(styles1[i]);
+		/*buttons[i]->setBounds(buttonSize * (i % 3),
+			buttonSize * (i / 3) + bounds.getHeight() / 3,
+			buttonSize,
+			buttonSize);*/
+	}
+
+	for (int i = 0; i < styles2.size(); ++i)
+	{
+		addAndMakeVisible(styles2[i]);
+	}
 
 	setSize(1920 * 0.75, 1200 * 0.75);
 }
@@ -134,11 +160,51 @@ void MainComponent::resized()
     // If you add any child components, this is where you should
     // update their positions.
 
+	int maxStyleWidth = getWidth() - 20 * 2;
+	int spacing = 10;
+
+	int totalW = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		totalW += styles1[i]->getIdealWidth();
+	}
+
+	totalW += (10 - 1) * spacing;
+
+	int rows =  maxStyleWidth / totalW + 1;
+
+
 	auto r = getLocalBounds().toFloat();
 
-	auto sr = r.removeFromTop(40).toNearestInt();
-	stylecom.setBounds(sr.getX(), sr.getY(), stylecom.getIdealWidth(), stylecom._expectHeight);
+	auto styleRect = r.removeFromTop(TStyleComponent::_expectHeight * rows).toNearestInt();
+
+
+
+	//stylecom.setBounds(sr.getX(), sr.getY(), stylecom.getIdealWidth(), stylecom._expectHeight);
 	
+	juce::FlexBox fbStyles1;                                               // [1]
+	fbStyles1.flexDirection = juce::FlexBox::Direction::row;
+	fbStyles1.flexWrap = juce::FlexBox::Wrap::wrap;                        // [2]
+	fbStyles1.justifyContent = juce::FlexBox::JustifyContent::center;      // [3]
+	fbStyles1.alignContent = juce::FlexBox::AlignContent::center;       // [4]
+
+	for (int i = 0; i < 10; i++)
+	{
+		auto idealWidth = styles1[i]->getIdealWidth();
+		auto fis = juce::FlexItem(c1).withMinWidth(idealWidth).withMaxWidth(idealWidth).withMinHeight(TStyleComponent::_expectHeight).withMaxHeight(TStyleComponent::_expectHeight);
+		fbStyles1.items.add(fis);
+	}
+
+
+
+	//fis = juce::FlexItem(c2).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
+	//fbStyles1.items.add(fis);
+
+	//fis = juce::FlexItem(c3).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
+	//fbStyles1.items.add(fis);
+
+	fbStyles1.performLayout(styleRect);
+
 
 
 	return;

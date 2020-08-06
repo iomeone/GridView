@@ -78,7 +78,7 @@ private:
 	String _styleText;
 
 public:
-	float _expectHeight{ 40 };
+	static float _expectHeight  ;
     //[/UserVariables]
 
     //==============================================================================
