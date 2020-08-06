@@ -160,54 +160,8 @@ void MainComponent::resized()
     // If you add any child components, this is where you should
     // update their positions.
 
-	int maxStyleWidth = getWidth() - 20 * 2;
-	int spacing = 10;
-
-	int totalW = 0;
-	for (int i = 0; i < 10; i++)
-	{
-		totalW += styles1[i]->getIdealWidth();
-	}
-
-	totalW += (10 - 1) * spacing;
-
-	int rows =  maxStyleWidth / totalW + 1;
-
-
-	auto r = getLocalBounds().toFloat();
-
-	auto styleRect = r.removeFromTop(TStyleComponent::_expectHeight * rows).toNearestInt();
-
-
-
-	//stylecom.setBounds(sr.getX(), sr.getY(), stylecom.getIdealWidth(), stylecom._expectHeight);
 	
-	juce::FlexBox fbStyles1;                                               // [1]
-	fbStyles1.flexDirection = juce::FlexBox::Direction::row;
-	fbStyles1.flexWrap = juce::FlexBox::Wrap::wrap;                        // [2]
-	fbStyles1.justifyContent = juce::FlexBox::JustifyContent::center;      // [3]
-	fbStyles1.alignContent = juce::FlexBox::AlignContent::center;       // [4]
-
-	for (int i = 0; i < 10; i++)
-	{
-		auto idealWidth = styles1[i]->getIdealWidth() ;
-		auto fis = juce::FlexItem(*styles1[i]).withMinWidth(idealWidth).withMaxWidth(idealWidth).withMinHeight(TStyleComponent::_expectHeight).withMaxHeight(TStyleComponent::_expectHeight);
-		fbStyles1.items.add(fis);
-	}
-
-
-
-	//fis = juce::FlexItem(c2).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
-	//fbStyles1.items.add(fis);
-
-	//fis = juce::FlexItem(c3).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
-	//fbStyles1.items.add(fis);
-
-	fbStyles1.performLayout(styleRect);
-
-
-
-	return;
+	auto r = getLocalBounds();
 		
 
 		juce::AttributedString attributedText;
@@ -316,8 +270,47 @@ void MainComponent::resized()
 	//////////////////////////////////
 	//height 40      lable width = whole width - 60
 
-	
+	int maxStyleWidth = getWidth() - 20 * 2;
+	int spacing = 10;
 
+	int totalW = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		totalW += styles1[i]->getIdealWidth();
+	}
+
+	totalW += (10 - 1) * spacing;
+
+	int rows = totalW / maxStyleWidth + 1;
+
+	auto styleRect = r.removeFromTop(TStyleComponent::_expectHeight * rows + rows * 20/*  20 is margin */).toNearestInt();
+
+
+	auto lnotused = styleRect.removeFromLeft(20);
+	auto rnotused = styleRect.removeFromRight(20);
+
+
+
+
+	//stylecom.setBounds(sr.getX(), sr.getY(), stylecom.getIdealWidth(), stylecom._expectHeight);
+
+	juce::FlexBox fbStyles1;                                              
+	fbStyles1.flexDirection = juce::FlexBox::Direction::row;
+	fbStyles1.flexWrap = juce::FlexBox::Wrap::wrap;                        
+	fbStyles1.justifyContent = juce::FlexBox::JustifyContent::spaceAround;    
+	fbStyles1.alignContent = juce::FlexBox::AlignContent::center;       
+
+	for (int i = 0; i < 10; i++)
+	{
+		auto idealWidth = styles1[i]->getIdealWidth();
+		auto fis = juce::FlexItem(*styles1[i]).withMinWidth(idealWidth).withMaxWidth(idealWidth).withMinHeight(TStyleComponent::_expectHeight).withMaxHeight(TStyleComponent::_expectHeight)
+			.withMargin(FlexItem::Margin(0, 10, 20, 0));
+		fbStyles1.items.add(fis);
+	}
+
+	fbStyles1.performLayout(styleRect);
+
+	return;
 	
 }
 
