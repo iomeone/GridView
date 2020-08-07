@@ -60,7 +60,14 @@ void SearchComponent::paint (Graphics& g)
     //[UserPrePaint] Add your own custom painting code here..
     //[/UserPrePaint]
 
-    g.fillAll (Colour (0xff939fa5));
+    {
+        float x = 2.0f, y = 2.0f, width = static_cast<float> (getWidth() - 4), height = static_cast<float> (getHeight() - 4);
+        Colour strokeColour = Colours::aliceblue;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (strokeColour);
+        g.drawRoundedRectangle (x, y, width, height, 20.000f, 2.000f);
+    }
 
     //[UserPaint] Add your own custom painting code here..
     //[/UserPaint]
@@ -94,7 +101,10 @@ BEGIN_JUCER_METADATA
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
                  fixedSize="0" initialWidth="600" initialHeight="400">
-  <BACKGROUND backgroundColour="ff939fa5"/>
+  <BACKGROUND backgroundColour="0">
+    <ROUNDRECT pos="2 2 4M 4M" cornerSize="20.0" fill="solid: 0" hasStroke="1"
+               stroke="2, mitered, butt" strokeColour="solid: fff0f8ff"/>
+  </BACKGROUND>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
