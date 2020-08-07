@@ -82,7 +82,7 @@ MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD")//, styleco
 	addAndMakeVisible(tbPro.get());
 
 
-
+	
 
 	//addAndMakeVisible(buttons.add(new juce::TextButton(juce::String("ACADEMY"))));
 	//addAndMakeVisible(buttons.add(new juce::TextButton(juce::String("SONGS"))));
@@ -105,25 +105,19 @@ MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD")//, styleco
 		));
 	}
 
-	for (int i = 0; i < 20; i++)
-	{
-		styles2.add(new TStyleComponent(String::repeatedString(String(i), i % 10 + 1)
-		));
-	}
+ 
 
 	for (int i = 0; i < styles1.size(); ++i)
 	{
 		addAndMakeVisible(styles1[i]);
-		/*buttons[i]->setBounds(buttonSize * (i % 3),
-			buttonSize * (i / 3) + bounds.getHeight() / 3,
-			buttonSize,
-			buttonSize);*/
 	}
 
-	for (int i = 0; i < styles2.size(); ++i)
-	{
-		//addAndMakeVisible(styles2[i]);
-	}
+ 
+
+	_searchCom.reset(new SearchComponent());
+	addAndMakeVisible(_searchCom.get());
+
+
 
 	setSize(1920 * 0.75, 1200 * 0.75);
 }
@@ -289,11 +283,6 @@ void MainComponent::resized()
 	auto lnotused = styleRect.removeFromLeft(20);
 	auto rnotused = styleRect.removeFromRight(20);
 
-
-
-
-	//stylecom.setBounds(sr.getX(), sr.getY(), stylecom.getIdealWidth(), stylecom._expectHeight);
-
 	juce::FlexBox fbStyles1;                                              
 	fbStyles1.flexDirection = juce::FlexBox::Direction::row;
 	fbStyles1.flexWrap = juce::FlexBox::Wrap::wrap;                        
@@ -310,6 +299,41 @@ void MainComponent::resized()
 
 	fbStyles1.performLayout(styleRect);
 
+
+
+	
+
+
+
+
+	/////////////////
+	//
+	//search 
+	////////////////
+	r.removeFromTop(48);
+	auto searchArea = r.removeFromTop(48);
+
+
+	juce::FlexBox fbSearch;
+	fbSearch.flexDirection = juce::FlexBox::Direction::row;
+	fbSearch.flexWrap = juce::FlexBox::Wrap::noWrap;
+	fbSearch.justifyContent = juce::FlexBox::JustifyContent::center;
+	fbSearch.alignContent = juce::FlexBox::AlignContent::center;
+
+ 
+	 
+	auto fitemsearch = juce::FlexItem(*_searchCom).withMinWidth(500).withMaxWidth(500).withMinHeight(48).withMaxHeight(48);
+		
+	fbSearch.items.add(fitemsearch);
+ 
+
+	fbSearch.performLayout(searchArea);
+
+
+	//_searchCom->setBounds(searchArea);
+	
+	
+	
 	return;
 	
 }

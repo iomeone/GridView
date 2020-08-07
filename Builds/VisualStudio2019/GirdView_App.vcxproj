@@ -138,6 +138,7 @@
     <Lib/>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\SearchComponent.cpp"/>
     <ClCompile Include="..\..\Source\TStyleComponent.cpp"/>
     <ClCompile Include="..\..\Source\SmoothScrollBar.cpp"/>
     <ClCompile Include="..\..\Source\StackHolder.cpp"/>
@@ -1864,6 +1865,7 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\SearchComponent.h"/>
     <ClInclude Include="..\..\Source\TStyleComponent.h"/>
     <ClInclude Include="..\..\Source\Component.h"/>
     <ClInclude Include="..\..\Source\SmoothScrollBar.h"/>

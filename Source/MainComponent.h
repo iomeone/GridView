@@ -12,6 +12,7 @@
 #include "TComponent.h"
 #include "StackManager.h"
 #include "TStyleComponent.h"
+#include "SearchComponent.h"
 
 //==============================================================================
 /*
@@ -48,7 +49,8 @@ private:
 	//TStyleComponent stylecom;
 	juce::OwnedArray< TStyleComponent> styles1;
 
-	juce::OwnedArray< TStyleComponent> styles2;
+	
+ 
 
 	float menuHeight{ 0.f };
 	std::unique_ptr< juce::Label> Icon;
@@ -68,6 +70,8 @@ private:
 
 
 	std::unique_ptr< juce::Label> bookLibrary;
+
+	std::unique_ptr< SearchComponent> _searchCom;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
