@@ -40,12 +40,15 @@ SearchComponent::SearchComponent ()
     textEditor->setScrollbarsShown (false);
     textEditor->setCaretVisible (true);
     textEditor->setPopupMenuEnabled (true);
-    textEditor->setColour (TextEditor::backgroundColourId, Colour (0x00495358));
+    textEditor->setColour (TextEditor::backgroundColourId, Colour (0x40565849));
+    textEditor->setColour (TextEditor::outlineColourId, Colour (0x00992020));
     textEditor->setText (String());
 
 
-
     //[UserPreSize]
+	auto f = textEditor->getFont();
+	f.setHeight(30);
+	textEditor->setFont(f);
 	textEditor->setColour(TextEditor::outlineColourId, Colours::transparentBlack);
 	textEditor->setColour(TextEditor::focusedOutlineColourId, Colours::transparentBlack);
     //[/UserPreSize]
@@ -93,7 +96,7 @@ void SearchComponent::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    textEditor->setBounds (10, 10, getWidth() - 20, getHeight() - 20);
+    textEditor->setBounds (5, 5, getWidth() - 10, getHeight() - 10);
     //[UserResized] Add your own custom resize handling here..
 
     //[/UserResized]
@@ -123,9 +126,9 @@ BEGIN_JUCER_METADATA
                stroke="2, mitered, butt" strokeColour="solid: fff0f8ff"/>
   </BACKGROUND>
   <TEXTEDITOR name="new text editor" id="d6c1ca47e83c789f" memberName="textEditor"
-              virtualName="" explicitFocusOrder="0" pos="10 10 20M 20M" bkgcol="495358"
-              initialText="" multiline="0" retKeyStartsLine="0" readonly="0"
-              scrollbars="0" caret="1" popupmenu="1"/>
+              virtualName="" explicitFocusOrder="0" pos="5 5 10M 10M" bkgcol="40565849"
+              outlinecol="992020" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="0" scrollbars="0" caret="1" popupmenu="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
