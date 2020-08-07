@@ -397,6 +397,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\TUICommon.cpp">
+      <Filter>GirdView\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\SearchComponent.cpp">
       <Filter>GirdView\Source</Filter>
     </ClCompile>
@@ -2268,6 +2271,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\TUICommon.h">
+      <Filter>GirdView\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\SearchComponent.h">
       <Filter>GirdView\Source</Filter>
     </ClInclude>

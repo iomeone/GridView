@@ -24,6 +24,7 @@
 
 
 //[MiscUserDefs] You can add your own user definitions and misc code here...
+#include "TUICommon.h"
 //[/MiscUserDefs]
 
 //==============================================================================
@@ -44,6 +45,10 @@ SearchComponent::SearchComponent ()
     textEditor->setColour (TextEditor::outlineColourId, Colour (0x00992020));
     textEditor->setText (String());
 
+    _btnSearch.reset (new DrawableButton ("searchButton", DrawableButton::ImageFitted));
+    addAndMakeVisible (_btnSearch.get());
+    _btnSearch->setName ("searchButton");
+
 
     //[UserPreSize]
 	auto f = textEditor->getFont();
@@ -51,6 +56,29 @@ SearchComponent::SearchComponent ()
 	textEditor->setFont(f);
 	textEditor->setColour(TextEditor::outlineColourId, Colours::transparentBlack);
 	textEditor->setColour(TextEditor::focusedOutlineColourId, Colours::transparentBlack);
+
+
+	Drawable * normalImage, *overImage, *downImage, *disabledImage;
+	Drawable * normalImageOn, *overImageOn, *downImageOn, *disabledImageOn;
+
+	normalImage = getDockablePath(TOP, false, false);
+	overImage = getDockablePath(TOP, false, true);
+	normalImageOn = getDockablePath(TOP, true, false);
+	overImageOn = getDockablePath(TOP, true, true);
+
+	downImage = 0; downImageOn = 0;
+	disabledImage = 0; disabledImageOn = 0;
+
+	_btnSearch->setImages(normalImage, overImage, downImage, disabledImage,
+		normalImageOn, overImageOn, downImageOn, disabledImageOn);
+
+
+
+	delete normalImage; delete normalImageOn;
+	delete overImage; delete overImageOn;
+	delete downImage; delete downImageOn;
+	delete disabledImage; delete disabledImageOn;
+
     //[/UserPreSize]
 
     setSize (600, 400);
@@ -66,6 +94,7 @@ SearchComponent::~SearchComponent()
     //[/Destructor_pre]
 
     textEditor = nullptr;
+    _btnSearch = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -96,7 +125,8 @@ void SearchComponent::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    textEditor->setBounds (5, 5, getWidth() - 10, getHeight() - 10);
+    textEditor->setBounds (5, 5, getWidth() - 40, getHeight() - 10);
+    _btnSearch->setBounds (getWidth() - 40 - 10 , 4, 40, 40);
     //[UserResized] Add your own custom resize handling here..
 
     //[/UserResized]
@@ -126,9 +156,12 @@ BEGIN_JUCER_METADATA
                stroke="2, mitered, butt" strokeColour="solid: fff0f8ff"/>
   </BACKGROUND>
   <TEXTEDITOR name="new text editor" id="d6c1ca47e83c789f" memberName="textEditor"
-              virtualName="" explicitFocusOrder="0" pos="5 5 10M 10M" bkgcol="40565849"
+              virtualName="" explicitFocusOrder="0" pos="5 5 40M 10M" bkgcol="40565849"
               outlinecol="992020" initialText="" multiline="0" retKeyStartsLine="0"
               readonly="0" scrollbars="0" caret="1" popupmenu="1"/>
+  <GENERICCOMPONENT name="searchButton" id="c2a79b23342d64d5" memberName="_btnSearch"
+                    virtualName="DrawableButton" explicitFocusOrder="0" pos="30R 4 30 30"
+                    class="DrawableButton" params="&quot;searchButton&quot;, DrawableButton::ImageFitted"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
