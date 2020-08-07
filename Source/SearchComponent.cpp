@@ -32,8 +32,22 @@ SearchComponent::SearchComponent ()
     //[Constructor_pre] You can add your own custom stuff here..
     //[/Constructor_pre]
 
+    textEditor.reset (new TextEditor ("new text editor"));
+    addAndMakeVisible (textEditor.get());
+    textEditor->setMultiLine (false);
+    textEditor->setReturnKeyStartsNewLine (false);
+    textEditor->setReadOnly (false);
+    textEditor->setScrollbarsShown (false);
+    textEditor->setCaretVisible (true);
+    textEditor->setPopupMenuEnabled (true);
+    textEditor->setColour (TextEditor::backgroundColourId, Colour (0x00495358));
+    textEditor->setText (String());
+
+
 
     //[UserPreSize]
+	textEditor->setColour(TextEditor::outlineColourId, Colours::transparentBlack);
+	textEditor->setColour(TextEditor::focusedOutlineColourId, Colours::transparentBlack);
     //[/UserPreSize]
 
     setSize (600, 400);
@@ -48,6 +62,7 @@ SearchComponent::~SearchComponent()
     //[Destructor_pre]. You can add your own custom destruction code here..
     //[/Destructor_pre]
 
+    textEditor = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -78,7 +93,9 @@ void SearchComponent::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
+    textEditor->setBounds (10, 10, getWidth() - 20, getHeight() - 20);
     //[UserResized] Add your own custom resize handling here..
+
     //[/UserResized]
 }
 
@@ -105,6 +122,10 @@ BEGIN_JUCER_METADATA
     <ROUNDRECT pos="2 2 4M 4M" cornerSize="20.0" fill="solid: 0" hasStroke="1"
                stroke="2, mitered, butt" strokeColour="solid: fff0f8ff"/>
   </BACKGROUND>
+  <TEXTEDITOR name="new text editor" id="d6c1ca47e83c789f" memberName="textEditor"
+              virtualName="" explicitFocusOrder="0" pos="10 10 20M 20M" bkgcol="495358"
+              initialText="" multiline="0" retKeyStartsLine="0" readonly="0"
+              scrollbars="0" caret="1" popupmenu="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
