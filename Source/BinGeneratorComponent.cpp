@@ -403,7 +403,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
 
 
     //[Constructor] You can add your own custom stuff here..
-	setSize(1920 * 0.75, 1200 * 0.75);
+	setSize(1920 * 0.68, 1200 * 0.9);
     //[/Constructor]
 }
 
