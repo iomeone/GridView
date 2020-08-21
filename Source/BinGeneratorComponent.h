@@ -84,6 +84,17 @@ private:
     std::unique_ptr<TextButton> _textButtonTieVetex;
     std::unique_ptr<TextEditor> _textEditorTieVetex;
     std::unique_ptr<Label> _labelTieVetex2;
+    std::unique_ptr<Label> _difficulty;
+    std::unique_ptr<TextEditor> _textEditorDifficulty;
+    std::unique_ptr<Label> _Type;
+    std::unique_ptr<TextEditor> _textEditorType;
+    std::unique_ptr<Label> _Title;
+    std::unique_ptr<TextEditor> _textEditorTitle;
+    std::unique_ptr<Label> _Author;
+    std::unique_ptr<TextEditor> _textEditorAuthor;
+    std::unique_ptr<Label> _Picture;
+    std::unique_ptr<TextEditor> _textEditorPicture;
+    std::unique_ptr<TextButton> _textButtonGenerator;
 
 
     //==============================================================================

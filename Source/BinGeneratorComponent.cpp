@@ -274,6 +274,127 @@ BinGeneratorComponent::BinGeneratorComponent ()
 
     _labelTieVetex2->setBounds (36, 665, 150, 24);
 
+    _difficulty.reset (new Label ("difficulty",
+                                  TRANS("difficulty\n")));
+    addAndMakeVisible (_difficulty.get());
+    _difficulty->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
+    _difficulty->setJustificationType (Justification::centredLeft);
+    _difficulty->setEditable (false, false, false);
+    _difficulty->setColour (TextEditor::textColourId, Colours::black);
+    _difficulty->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    _difficulty->setBounds (48, 736, 150, 24);
+
+    _textEditorDifficulty.reset (new TextEditor ("textofdifficulty"));
+    addAndMakeVisible (_textEditorDifficulty.get());
+    _textEditorDifficulty->setMultiLine (false);
+    _textEditorDifficulty->setReturnKeyStartsNewLine (false);
+    _textEditorDifficulty->setReadOnly (false);
+    _textEditorDifficulty->setScrollbarsShown (true);
+    _textEditorDifficulty->setCaretVisible (true);
+    _textEditorDifficulty->setPopupMenuEnabled (true);
+    _textEditorDifficulty->setText (TRANS("1"));
+
+    _textEditorDifficulty->setBounds (208, 736, 160, 24);
+
+    _Type.reset (new Label ("Type",
+                            TRANS("Type")));
+    addAndMakeVisible (_Type.get());
+    _Type->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
+    _Type->setJustificationType (Justification::centredLeft);
+    _Type->setEditable (false, false, false);
+    _Type->setColour (TextEditor::textColourId, Colours::black);
+    _Type->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    _Type->setBounds (48, 776, 150, 24);
+
+    _textEditorType.reset (new TextEditor ("textofType"));
+    addAndMakeVisible (_textEditorType.get());
+    _textEditorType->setMultiLine (false);
+    _textEditorType->setReturnKeyStartsNewLine (false);
+    _textEditorType->setReadOnly (false);
+    _textEditorType->setScrollbarsShown (true);
+    _textEditorType->setCaretVisible (true);
+    _textEditorType->setPopupMenuEnabled (true);
+    _textEditorType->setText (TRANS("CLASSICAL"));
+
+    _textEditorType->setBounds (208, 776, 160, 24);
+
+    _Title.reset (new Label ("Title",
+                             TRANS("Title")));
+    addAndMakeVisible (_Title.get());
+    _Title->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
+    _Title->setJustificationType (Justification::centredLeft);
+    _Title->setEditable (false, false, false);
+    _Title->setColour (TextEditor::textColourId, Colours::black);
+    _Title->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    _Title->setBounds (44, 821, 150, 24);
+
+    _textEditorTitle.reset (new TextEditor ("textofTitle"));
+    addAndMakeVisible (_textEditorTitle.get());
+    _textEditorTitle->setMultiLine (false);
+    _textEditorTitle->setReturnKeyStartsNewLine (false);
+    _textEditorTitle->setReadOnly (false);
+    _textEditorTitle->setScrollbarsShown (true);
+    _textEditorTitle->setCaretVisible (true);
+    _textEditorTitle->setPopupMenuEnabled (true);
+    _textEditorTitle->setText (TRANS("\n"));
+
+    _textEditorTitle->setBounds (208, 824, 480, 24);
+
+    _Author.reset (new Label ("Author",
+                              TRANS("Author")));
+    addAndMakeVisible (_Author.get());
+    _Author->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
+    _Author->setJustificationType (Justification::centredLeft);
+    _Author->setEditable (false, false, false);
+    _Author->setColour (TextEditor::textColourId, Colours::black);
+    _Author->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    _Author->setBounds (42, 869, 150, 24);
+
+    _textEditorAuthor.reset (new TextEditor ("textofAuthor"));
+    addAndMakeVisible (_textEditorAuthor.get());
+    _textEditorAuthor->setMultiLine (false);
+    _textEditorAuthor->setReturnKeyStartsNewLine (false);
+    _textEditorAuthor->setReadOnly (false);
+    _textEditorAuthor->setScrollbarsShown (true);
+    _textEditorAuthor->setCaretVisible (true);
+    _textEditorAuthor->setPopupMenuEnabled (true);
+    _textEditorAuthor->setText (TRANS("\n"));
+
+    _textEditorAuthor->setBounds (210, 869, 678, 24);
+
+    _Picture.reset (new Label ("Picture",
+                               TRANS("Picture")));
+    addAndMakeVisible (_Picture.get());
+    _Picture->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
+    _Picture->setJustificationType (Justification::centredLeft);
+    _Picture->setEditable (false, false, false);
+    _Picture->setColour (TextEditor::textColourId, Colours::black);
+    _Picture->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    _Picture->setBounds (43, 910, 150, 24);
+
+    _textEditorPicture.reset (new TextEditor ("textofPicture"));
+    addAndMakeVisible (_textEditorPicture.get());
+    _textEditorPicture->setMultiLine (false);
+    _textEditorPicture->setReturnKeyStartsNewLine (false);
+    _textEditorPicture->setReadOnly (false);
+    _textEditorPicture->setScrollbarsShown (true);
+    _textEditorPicture->setCaretVisible (true);
+    _textEditorPicture->setPopupMenuEnabled (true);
+    _textEditorPicture->setText (TRANS("\n"));
+
+    _textEditorPicture->setBounds (211, 910, 677, 24);
+
+    _textButtonGenerator.reset (new TextButton ("Generator"));
+    addAndMakeVisible (_textButtonGenerator.get());
+    _textButtonGenerator->addListener (this);
+
+    _textButtonGenerator->setBounds (1080, 920, 150, 24);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -315,6 +436,17 @@ BinGeneratorComponent::~BinGeneratorComponent()
     _textButtonTieVetex = nullptr;
     _textEditorTieVetex = nullptr;
     _labelTieVetex2 = nullptr;
+    _difficulty = nullptr;
+    _textEditorDifficulty = nullptr;
+    _Type = nullptr;
+    _textEditorType = nullptr;
+    _Title = nullptr;
+    _textEditorTitle = nullptr;
+    _Author = nullptr;
+    _textEditorAuthor = nullptr;
+    _Picture = nullptr;
+    _textEditorPicture = nullptr;
+    _textButtonGenerator = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -396,6 +528,11 @@ void BinGeneratorComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode__textButtonTieVetex] -- add your button handler code here..
         //[/UserButtonCode__textButtonTieVetex]
+    }
+    else if (buttonThatWasClicked == _textButtonGenerator.get())
+    {
+        //[UserButtonCode__textButtonGenerator] -- add your button handler code here..
+        //[/UserButtonCode__textButtonGenerator]
     }
 
     //[UserbuttonClicked_Post]
@@ -518,6 +655,54 @@ BEGIN_JUCER_METADATA
          edBkgCol="0" labelText="TieVetex" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
+  <LABEL name="difficulty" id="975da7d42a07b022" memberName="_difficulty"
+         virtualName="" explicitFocusOrder="0" pos="48 736 150 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="difficulty&#10;" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
+         fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
+  <TEXTEDITOR name="textofdifficulty" id="7abc5f97c4094e4" memberName="_textEditorDifficulty"
+              virtualName="" explicitFocusOrder="0" pos="208 736 160 24" initialText="1"
+              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
+              caret="1" popupmenu="1"/>
+  <LABEL name="Type" id="3e578a153c9af6a9" memberName="_Type" virtualName=""
+         explicitFocusOrder="0" pos="48 776 150 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Type" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
+  <TEXTEDITOR name="textofType" id="f50678b186f1d9ce" memberName="_textEditorType"
+              virtualName="" explicitFocusOrder="0" pos="208 776 160 24" initialText="CLASSICAL"
+              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
+              caret="1" popupmenu="1"/>
+  <LABEL name="Title" id="bd43d19baed8f55c" memberName="_Title" virtualName=""
+         explicitFocusOrder="0" pos="44 821 150 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Title" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
+  <TEXTEDITOR name="textofTitle" id="c5f4daa5f43c9f7f" memberName="_textEditorTitle"
+              virtualName="" explicitFocusOrder="0" pos="208 824 480 24" initialText="&#10;"
+              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
+              caret="1" popupmenu="1"/>
+  <LABEL name="Author" id="91618ead3e06ab8a" memberName="_Author" virtualName=""
+         explicitFocusOrder="0" pos="42 869 150 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Author" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
+  <TEXTEDITOR name="textofAuthor" id="bc8f74d41e43ea02" memberName="_textEditorAuthor"
+              virtualName="" explicitFocusOrder="0" pos="210 869 678 24" initialText="&#10;"
+              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
+              caret="1" popupmenu="1"/>
+  <LABEL name="Picture" id="6f9bf486e7bc944a" memberName="_Picture" virtualName=""
+         explicitFocusOrder="0" pos="43 910 150 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Picture" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
+  <TEXTEDITOR name="textofPicture" id="22222ffa3ed56b97" memberName="_textEditorPicture"
+              virtualName="" explicitFocusOrder="0" pos="211 910 677 24" initialText="&#10;"
+              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
+              caret="1" popupmenu="1"/>
+  <TEXTBUTTON name="Generator" id="3c6a35835a1409ff" memberName="_textButtonGenerator"
+              virtualName="" explicitFocusOrder="0" pos="1080 920 150 24" buttonText="Generator"
+              connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
