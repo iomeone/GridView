@@ -10,6 +10,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "MainComponent.h"
+#include "BinGeneratorComponent.h"
 #include "windows.h"
 //==============================================================================
 class GirdViewApplication  : public JUCEApplication
@@ -65,7 +66,9 @@ public:
                                                     DocumentWindow::allButtons)
         {
             setUsingNativeTitleBar (true);
-            setContentOwned (new MainComponent(), true);
+            //setContentOwned (new MainComponent(), true);
+			setContentOwned(new BinGeneratorComponent(), true);
+			
 
            #if JUCE_IOS || JUCE_ANDROID
             setFullScreen (true);

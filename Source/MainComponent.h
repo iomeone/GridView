@@ -13,7 +13,7 @@
 #include "StackManager.h"
 #include "TStyleComponent.h"
 #include "SearchComponent.h"
-
+#include "BinGeneratorComponent.h"
 //==============================================================================
 /*
     This component lives inside our window, and this is where you should put all
@@ -72,6 +72,9 @@ private:
 	std::unique_ptr< juce::Label> bookLibrary;
 
 	std::unique_ptr< SearchComponent> _searchCom;
+
+
+	std::unique_ptr< BinGeneratorComponent> _binGenerator;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

@@ -82,16 +82,9 @@ MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD")//, styleco
 	addAndMakeVisible(tbPro.get());
 
 
-	
-
-	//addAndMakeVisible(buttons.add(new juce::TextButton(juce::String("ACADEMY"))));
-	//addAndMakeVisible(buttons.add(new juce::TextButton(juce::String("SONGS"))));
 
 
-	//addAndMakeVisible(buttons.add(new juce::TextButton(juce::String("CONNECT"))));
-	//addAndMakeVisible(buttons.add(new juce::TextButton(juce::String("PRO"))));
-
-
+#ifdef TT
 	addAndMakeVisible(&c1);
 	//addAndMakeVisible(&c2);
 	//addAndMakeVisible(&c3);
@@ -117,6 +110,29 @@ MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD")//, styleco
 	_searchCom.reset(new SearchComponent());
 	addAndMakeVisible(_searchCom.get());
 
+#endif
+
+
+	_binGenerator.reset(new BinGeneratorComponent());
+	//addAndMakeVisible(_binGenerator.get());
+
+
+	tbAbout->onClick = [this]() {
+
+		if (this->_binGenerator->isVisible())
+		{
+			this->_binGenerator->setVisible(false);
+		}
+		else
+		{
+			this->_binGenerator->setBounds(this->getBounds());
+
+			this->_binGenerator->setResizable(true, true);
+			this->_binGenerator->setUsingNativeTitleBar(true);
+			this->_binGenerator->setVisible(true);
+		}
+		//juce::AlertWindow::showMessageBox(AlertWindow::AlertIconType::WarningIcon, "title", "msg", "btntext");
+	};
 
 
 	setSize(1920 * 0.75, 1200 * 0.75);
@@ -141,10 +157,10 @@ void MainComponent::paint (Graphics& g)
 
 
 	{
-		int x = 0, y = menuHeight, width = getWidth(), height = 400;
-		Colour fillColour = Colours::black;
-		g.setColour(fillColour);
-		g.fillRect(x, y, width, height);
+		//int x = 0, y = menuHeight, width = getWidth(), height = 400;
+		//Colour fillColour = Colours::black;
+		//g.setColour(fillColour);
+		//g.fillRect(x, y, width, height);
 	}
 }
 
@@ -157,6 +173,9 @@ void MainComponent::resized()
 	
 	auto r = getLocalBounds();
 		
+
+
+
 
 		juce::AttributedString attributedText;
 		attributedText.append(Icon->getText(), Icon->getFont());
@@ -225,7 +244,7 @@ void MainComponent::resized()
 	fb.performLayout(menuArea);                  // [6]
 
 
-
+#ifdef  TT
 	auto bookLibraryRect = r.removeFromTop(105.f );
 	bookLibrary->setBounds(bookLibraryRect.toNearestInt());
 
@@ -330,9 +349,9 @@ void MainComponent::resized()
 	fbSearch.performLayout(searchArea);
 
 
-	//_searchCom->setBounds(searchArea);
+#endif //  TT
 	
-	
+
 	
 	return;
 	

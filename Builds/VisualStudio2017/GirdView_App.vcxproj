@@ -138,6 +138,8 @@
     <Lib/>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\BinGeneratorComponent.cpp"/>
+    <ClCompile Include="..\..\Source\ThumbnailComponent.cpp"/>
     <ClCompile Include="..\..\Source\TUICommon.cpp"/>
     <ClCompile Include="..\..\Source\SearchComponent.cpp"/>
     <ClCompile Include="..\..\Source\TStyleComponent.cpp"/>
@@ -1866,6 +1868,8 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\BinGeneratorComponent.h"/>
+    <ClInclude Include="..\..\Source\ThumbnailComponent.h"/>
     <ClInclude Include="..\..\Source\TUICommon.h"/>
     <ClInclude Include="..\..\Source\SearchComponent.h"/>
     <ClInclude Include="..\..\Source\TStyleComponent.h"/>
