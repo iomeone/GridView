@@ -70,13 +70,11 @@ public:
     void resized() override;
     void buttonClicked (Button* buttonThatWasClicked) override;
 
-    // Binary resources:
-    static const char* becauseoltheme_png;
-    static const int becauseoltheme_pngSize;
 
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
+	Image cachedImage_heartandsoulpiano_png_1;
     //[/UserVariables]
 
     //==============================================================================
@@ -115,7 +113,7 @@ private:
     std::unique_ptr<Label> _Picture;
     std::unique_ptr<TextEditor> _textEditorPicture;
     std::unique_ptr<TextButton> _textButtonGenerator;
-    Image cachedImage_becauseoltheme_png_1;
+    std::unique_ptr<Drawable> drawable1;
 
 
     //==============================================================================
