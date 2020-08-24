@@ -507,6 +507,26 @@ void BinGeneratorComponent::buttonClicked (Button* buttonThatWasClicked)
 		{
 			juce::File xmlFile = myChooser.getResult();
 			_textEditorxmlSheet->setText(xmlFile.getFullPathName());
+
+			String fileName = xmlFile.getFileNameWithoutExtension();
+			
+
+			juce::File curDir = xmlFile.getParentDirectory();
+
+
+			checkFile(curDir, fileName + "msdf.png", _textEditorTexturePng);
+
+			
+			checkFile(curDir, "fParticle.txt", _textEditorParticleFragment);
+			checkFile(curDir, "vParticle.txt", _textEditorParticleVetex);
+
+			checkFile(curDir, "fStaffLine.txt", _textEditorstaffFragment2);
+			checkFile(curDir, "vStaffLine.txt", _textEditorstaffVetex);
+
+
+			checkFile(curDir, "fTie.txt", _textEditorTieFragment3);
+			checkFile(curDir, "vTie.txt", _textEditorTieVetex);
+
 		}
 
         //[/UserButtonCode__textButtonxmlSheet]

@@ -47,6 +47,23 @@ public:
 	{
 		this->setVisible(false);
 	}
+
+	void msg(String s, String title = "caption", AlertWindow::AlertIconType t = AlertWindow::AlertIconType::InfoIcon)
+	{
+		AlertWindow::showMessageBox(t, title, s, "ok");
+	}
+
+
+	void checkFile(File curDir, String name, std::unique_ptr<TextEditor> & edt)
+	{
+		juce::File FileTexturePng = curDir.getChildFile(name);
+		if (FileTexturePng.existsAsFile())
+			edt->setText(FileTexturePng.getFullPathName());
+		else
+			msg(FileTexturePng.getFullPathName(), "File Not Found");
+	}
+
+
     //[/UserMethods]
 
     void paint (Graphics& g) override;
