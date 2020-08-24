@@ -525,8 +525,8 @@ void BinGeneratorComponent::buttonClicked (Button* buttonThatWasClicked)
 
 			juce::File curDir = xmlFile.getParentDirectory();
 
-
-			checkFile(curDir, fileName + "msdf.png", _textEditorTexturePng);
+			String texturePngName = fileName + "msdf.png";
+			checkFile(curDir, texturePngName, _textEditorTexturePng);
 
 
 			checkFile(curDir, "fParticle.txt", _textEditorParticleFragment);
@@ -539,16 +539,101 @@ void BinGeneratorComponent::buttonClicked (Button* buttonThatWasClicked)
 			checkFile(curDir, "fTie.txt", _textEditorTieFragment3);
 			checkFile(curDir, "vTie.txt", _textEditorTieVetex);
 
+			String themePngName = fileName + "theme.png";
+			checkFile(curDir, themePngName, _textEditorPicture);
 
-			checkFile(curDir, fileName + "theme.png", _textEditorPicture);
 
+			ValueTree sheetBin(_textEditorTitle->getText());  // contain memoryblock of png and string of sheet describe.
 
-			juce::File ThemePng = curDir.getChildFile(fileName + "theme.png");
-			if (ThemePng.existsAsFile())
 			{
-				cachedImage_heartandsoulpiano_png_1 = ImageFileFormat::loadFrom(ThemePng);
-				repaint();
+				juce::File ThemePngFile = curDir.getChildFile(themePngName);
+				if (ThemePngFile.existsAsFile())
+				{
+					cachedImage_heartandsoulpiano_png_1 = ImageFileFormat::loadFrom(ThemePngFile);
+					repaint();
+				}
+				MemoryOutputStream ms;
+				PNGImageFormat pngFormat;
+				Image themeImage = pngFormat.loadFrom(ThemePngFile);
+				pngFormat.writeImageToStream(themeImage, ms);
+
+				MemoryBlock themePngBlock = ms.getMemoryBlock();
+
+				
+				sheetBin.setProperty("themepng", themePngBlock, nullptr);
 			}
+
+			
+			{
+				juce::File TexturePngFile = curDir.getChildFile(texturePngName);
+				MemoryOutputStream ms;
+				PNGImageFormat pngFormat;
+				Image texturePngImage = pngFormat.loadFrom(TexturePngFile);
+				pngFormat.writeImageToStream(texturePngImage, ms);
+
+				MemoryBlock TexturePngBlock = ms.getMemoryBlock();
+				sheetBin.setProperty("png", TexturePngBlock, nullptr);
+			}
+
+
+			{
+				juce::File sheetfile = curDir.getChildFile(fileName);
+				sheetBin.setProperty("sheet", sheetfile.loadFileAsString(), nullptr);
+			}
+				
+			{
+				juce::File fpFile = curDir.getChildFile("fParticle.txt");
+				sheetBin.setProperty("frag", fpFile.loadFileAsString(), nullptr);
+			}
+			{
+				juce::File fpFile = curDir.getChildFile("vParticle.txt");
+				sheetBin.setProperty("vetex", fpFile.loadFileAsString(), nullptr);
+			}
+
+
+
+			{
+				juce::File fpFile = curDir.getChildFile("fStaffLine.txt");
+				sheetBin.setProperty("fragStaff", fpFile.loadFileAsString(), nullptr);
+			}
+			{
+				juce::File fpFile = curDir.getChildFile("vStaffLine.txt");
+				sheetBin.setProperty("vetexStaff", fpFile.loadFileAsString(), nullptr);
+			}
+
+
+			{
+				juce::File fpFile = curDir.getChildFile("fTie.txt");
+				sheetBin.setProperty("fragIndicator", fpFile.loadFileAsString(), nullptr);
+			}
+			{
+				juce::File fpFile = curDir.getChildFile("vTie.txt");
+				sheetBin.setProperty("vetexIndicator", fpFile.loadFileAsString(), nullptr);
+			}
+
+
+
+
+			File sheetDescribePngBin = curDir.getChildFile(_textEditorTitle->getText() + ".bin");
+			if (sheetDescribePngBin.existsAsFile())
+			{
+				sheetDescribePngBin.deleteFile();
+			}
+			if (sheetDescribePngBin.existsAsFile())
+			{
+				msg( " can not delete " + sheetDescribePngBin.getFullPathName(), "error");
+				return;
+			}
+			msg("begin to write file to disk");
+			FileOutputStream os(sheetDescribePngBin);
+			if (os.openedOk())
+			{
+				os.setPosition(0);
+				os.truncate();
+				sheetBin.writeToStream(os);
+				os.flush();
+			}
+			msg("complete to write file to disk");
 
 		}
 
