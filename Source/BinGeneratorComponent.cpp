@@ -395,7 +395,6 @@ BinGeneratorComponent::BinGeneratorComponent ()
 
     _textButtonGenerator->setBounds (1080, 920, 150, 24);
 
-    drawable1 = Drawable::createFromImageData (heartandsoulpiano_png, heartandsoulpiano_pngSize);
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -448,7 +447,6 @@ BinGeneratorComponent::~BinGeneratorComponent()
     _Picture = nullptr;
     _textEditorPicture = nullptr;
     _textButtonGenerator = nullptr;
-    drawable1 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -464,19 +462,15 @@ void BinGeneratorComponent::paint (Graphics& g)
     g.fillAll (Colour (0xff323e44));
 
     {
-        int x = 956, y = 468, width = 460, height = 364;
+        int x = 996, y = 308, width = 316, height = 276;
         //[UserPaintCustomArguments] Customize the painting arguments here..
-    		int x = 956, y = 468, width = 460, height = 364;
-    		g.setColour(Colours::black);
-    		g.drawImage(cachedImage_heartandsoulpiano_png_1,
-    			x, y, width, height,
-    			0, 0, cachedImage_heartandsoulpiano_png_1.getWidth(), cachedImage_heartandsoulpiano_png_1.getHeight());
+
+		g.setColour(Colours::black);
+		g.drawImage(cachedImage_heartandsoulpiano_png_1,
+			x, y, width, height,
+			0, 0, cachedImage_heartandsoulpiano_png_1.getWidth(), cachedImage_heartandsoulpiano_png_1.getHeight());
+
         //[/UserPaintCustomArguments]
-        g.setColour (Colours::black);
-        jassert (drawable1 != 0);
-        if (drawable1 != 0)
-            drawable1->drawWithin (g, Rectangle<int> (x, y, width, height).toFloat(),
-                                   RectanglePlacement::stretchToFit, 1.000f);
     }
 
     //[UserPaint] Add your own custom painting code here..
@@ -620,8 +614,7 @@ BEGIN_JUCER_METADATA
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ff323e44">
-    <IMAGE pos="956 468 460 364" resource="heartandsoulpiano_png" opacity="1.0"
-           mode="0"/>
+    <IMAGE pos="996 308 316 276" resource="" opacity="1.0" mode="0"/>
   </BACKGROUND>
   <LABEL name="new label" id="d77da4bf617327bb" memberName="_labelTexturePng"
          virtualName="" explicitFocusOrder="0" pos="40 152 150 24" edTextCol="ff000000"

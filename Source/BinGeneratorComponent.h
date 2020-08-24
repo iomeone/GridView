@@ -113,7 +113,6 @@ private:
     std::unique_ptr<Label> _Picture;
     std::unique_ptr<TextEditor> _textEditorPicture;
     std::unique_ptr<TextButton> _textButtonGenerator;
-    std::unique_ptr<Drawable> drawable1;
 
 
     //==============================================================================
