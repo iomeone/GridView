@@ -43,7 +43,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _labelTexturePng->setColour (TextEditor::textColourId, Colours::black);
     _labelTexturePng->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    _labelTexturePng->setBounds (40, 48, 150, 24);
+    _labelTexturePng->setBounds (40, 152, 150, 24);
 
     _textEditorTexturePng.reset (new TextEditor ("texturePng"));
     addAndMakeVisible (_textEditorTexturePng.get());
@@ -55,21 +55,21 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorTexturePng->setPopupMenuEnabled (true);
     _textEditorTexturePng->setText (String());
 
-    _textEditorTexturePng->setBounds (216, 48, 472, 24);
+    _textEditorTexturePng->setBounds (216, 152, 472, 24);
 
     _textButtonTexturePng.reset (new TextButton ("_openTexturePng"));
     addAndMakeVisible (_textButtonTexturePng.get());
     _textButtonTexturePng->setButtonText (TRANS("open"));
     _textButtonTexturePng->addListener (this);
 
-    _textButtonTexturePng->setBounds (720, 48, 150, 24);
+    _textButtonTexturePng->setBounds (728, 152, 150, 24);
 
     _textButtonxmlSheet.reset (new TextButton ("_openxmlSheet"));
     addAndMakeVisible (_textButtonxmlSheet.get());
     _textButtonxmlSheet->setButtonText (TRANS("open"));
     _textButtonxmlSheet->addListener (this);
 
-    _textButtonxmlSheet->setBounds (728, 120, 150, 24);
+    _textButtonxmlSheet->setBounds (728, 80, 150, 24);
 
     _textEditorxmlSheet.reset (new TextEditor ("xmlSheet"));
     addAndMakeVisible (_textEditorxmlSheet.get());
@@ -81,7 +81,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorxmlSheet->setPopupMenuEnabled (true);
     _textEditorxmlSheet->setText (String());
 
-    _textEditorxmlSheet->setBounds (216, 120, 472, 24);
+    _textEditorxmlSheet->setBounds (216, 80, 472, 24);
 
     _labelXmlSheet.reset (new Label ("XmlSheet",
                                      TRANS("XmlSheet")));
@@ -92,7 +92,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _labelXmlSheet->setColour (TextEditor::textColourId, Colours::black);
     _labelXmlSheet->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    _labelXmlSheet->setBounds (40, 120, 150, 24);
+    _labelXmlSheet->setBounds (40, 80, 150, 24);
 
     _textButtonParticleFragment.reset (new TextButton ("_openParticleFragment"));
     addAndMakeVisible (_textButtonParticleFragment.get());
@@ -111,7 +111,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorParticleFragment->setPopupMenuEnabled (true);
     _textEditorParticleFragment->setText (String());
 
-    _textEditorParticleFragment->setBounds (220, 205, 472, 24);
+    _textEditorParticleFragment->setBounds (216, 200, 472, 24);
 
     _labelParticleFragment.reset (new Label ("ParticleFragment",
                                              TRANS("ParticleFragment")));
@@ -482,21 +482,33 @@ void BinGeneratorComponent::buttonClicked (Button* buttonThatWasClicked)
     if (buttonThatWasClicked == _textButtonTexturePng.get())
     {
         //[UserButtonCode__textButtonTexturePng] -- add your button handler code here..
-		FileChooser myChooser("Please select the Texture Png File.",
-			File::getCurrentWorkingDirectory(),
-			//File("C:/Users/user/Desktop/test"),
-			"*.txt;*.svg"); //"*.dll; *.*""
-		if (myChooser.browseForFileToOpen())
-		{
-			juce::File textureFile = myChooser.getResult();
-			_textEditorTexturePng->setText(textureFile.getFullPathName());
-		}
+		//FileChooser myChooser("Please select the Texture Png File.",
+		//	File::getCurrentWorkingDirectory(),
+		//	//File("C:/Users/user/Desktop/test"),
+		//	"*.txt;*.svg"); //"*.dll; *.*""
+		//if (myChooser.browseForFileToOpen())
+		//{
+		//	juce::File textureFile = myChooser.getResult();
+		//	_textEditorTexturePng->setText(textureFile.getFullPathName());
+		//}
 
         //[/UserButtonCode__textButtonTexturePng]
     }
     else if (buttonThatWasClicked == _textButtonxmlSheet.get())
     {
         //[UserButtonCode__textButtonxmlSheet] -- add your button handler code here..
+
+		FileChooser myChooser("Please select the sheet XML File.",
+			File::getCurrentWorkingDirectory(),
+			//File("C:/Users/user/Desktop/test"),
+			"*.txt"); //"*.dll; *.*""
+
+		if (myChooser.browseForFileToOpen())
+		{
+			juce::File xmlFile = myChooser.getResult();
+			_textEditorxmlSheet->setText(xmlFile.getFullPathName());
+		}
+
         //[/UserButtonCode__textButtonxmlSheet]
     }
     else if (buttonThatWasClicked == _textButtonParticleFragment.get())
@@ -560,26 +572,26 @@ BEGIN_JUCER_METADATA
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ff323e44"/>
   <LABEL name="new label" id="d77da4bf617327bb" memberName="_labelTexturePng"
-         virtualName="" explicitFocusOrder="0" pos="40 48 150 24" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="40 152 150 24" edTextCol="ff000000"
          edBkgCol="0" labelText="texture png&#10;" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <TEXTEDITOR name="texturePng" id="67d003976302167" memberName="_textEditorTexturePng"
-              virtualName="" explicitFocusOrder="0" pos="216 48 472 24" initialText=""
+              virtualName="" explicitFocusOrder="0" pos="216 152 472 24" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
   <TEXTBUTTON name="_openTexturePng" id="60b09a8dcd1deaf6" memberName="_textButtonTexturePng"
-              virtualName="" explicitFocusOrder="0" pos="720 48 150 24" buttonText="open"
+              virtualName="" explicitFocusOrder="0" pos="728 152 150 24" buttonText="open"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="_openxmlSheet" id="107f1754d581f00e" memberName="_textButtonxmlSheet"
-              virtualName="" explicitFocusOrder="0" pos="728 120 150 24" buttonText="open"
+              virtualName="" explicitFocusOrder="0" pos="728 80 150 24" buttonText="open"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTEDITOR name="xmlSheet" id="1095a4a1e3f3cb21" memberName="_textEditorxmlSheet"
-              virtualName="" explicitFocusOrder="0" pos="216 120 472 24" initialText=""
+              virtualName="" explicitFocusOrder="0" pos="216 80 472 24" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
   <LABEL name="XmlSheet" id="e9697c6ffb3ad626" memberName="_labelXmlSheet"
-         virtualName="" explicitFocusOrder="0" pos="40 120 150 24" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="40 80 150 24" edTextCol="ff000000"
          edBkgCol="0" labelText="XmlSheet" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
@@ -587,7 +599,7 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="732 205 150 24" buttonText="open"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTEDITOR name="ParticleFragment" id="59b14c8ae5fda44e" memberName="_textEditorParticleFragment"
-              virtualName="" explicitFocusOrder="0" pos="220 205 472 24" initialText=""
+              virtualName="" explicitFocusOrder="0" pos="216 200 472 24" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
   <LABEL name="ParticleFragment" id="ce839e0227766d97" memberName="_labelParticleFragment"
