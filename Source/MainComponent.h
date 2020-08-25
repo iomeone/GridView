@@ -9,11 +9,12 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "TComponent.h"
+
 #include "StackManager.h"
-#include "TStyleComponent.h"
-#include "SearchComponent.h"
+
 #include "BinGeneratorComponent.h"
+
+#include "ContentComponent.h"
 //==============================================================================
 /*
     This component lives inside our window, and this is where you should put all
@@ -42,15 +43,7 @@ private:
 
 	//bool firstCall{ true };
 	//StackManager manager;
-	TComponent c1;
-	TComponent c2;
-	TComponent c3;
 
-	//TStyleComponent stylecom;
-	juce::OwnedArray< TStyleComponent> styles1;
-
-	
- 
 
 	float menuHeight{ 0.f };
 	std::unique_ptr< juce::Label> Icon;
@@ -66,15 +59,14 @@ private:
 	std::unique_ptr < TextButton > tbConnect;
 	std::unique_ptr < TextButton > tbPro;
 
-	juce::HashMap<juce::String, int> strWidthMap;
-
-
-	std::unique_ptr< juce::Label> bookLibrary;
-
-	std::unique_ptr< SearchComponent> _searchCom;
 
 
 	std::unique_ptr< BinGeneratorComponent> _binGenerator;
+
+	std::unique_ptr< ContentComponent> _contentComp;
+
+
+	Viewport contentViewport;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

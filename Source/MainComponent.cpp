@@ -8,8 +8,11 @@
 
 #include "MainComponent.h"
 //https://dribbble.com/srioz
+
+ 
+
 //==============================================================================
-MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD")//, stylecom("teststyle123123123")// : manager(false)
+MainComponent::MainComponent() //, stylecom("teststyle123123123")// : manager(false)
 {
    
 
@@ -51,17 +54,7 @@ MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD")//, styleco
 	addAndMakeVisible(Icon.get());
 
 
-	//book library
-	
-	bookLibrary.reset(new juce::Label("bk", "BOOK LIBRARY"));
-	f = Icon->getFont();
-	f.setSizeAndStyle(fontSize , Font::FontStyleFlags::bold, 1.0, 0);
-	bookLibrary->setFont(f);
-	bookLibrary->setJustificationType(Justification::centred);
-	bookLibrary->setColour(juce::Label::ColourIds::backgroundColourId, juce::Colours::black);
-	//Icon->setBorderSize(juce::BorderSize<int>(5));  //need set outline width
-	//Icon->setColour(juce::Label::outlineColourId, juce::Colours::black);
-	addAndMakeVisible(bookLibrary.get());
+
 
 
 	// menu
@@ -82,40 +75,18 @@ MainComponent::MainComponent() : c1("EASY"), c2("MEDIUM"), c3("HARD")//, styleco
 	addAndMakeVisible(tbPro.get());
 
 
-
-
-#ifdef TT
-	addAndMakeVisible(&c1);
-	//addAndMakeVisible(&c2);
-	//addAndMakeVisible(&c3);
  
-
-	//addAndMakeVisible(&stylecom);
-
-	for (int i = 0; i < 10; i++)
-	{
-		styles1.add(new TStyleComponent(   String::repeatedString(String(i), i % 10 + 1)
-		));
-	}
-
- 
-
-	for (int i = 0; i < styles1.size(); ++i)
-	{
-		addAndMakeVisible(styles1[i]);
-	}
-
- 
-
-	_searchCom.reset(new SearchComponent());
-	addAndMakeVisible(_searchCom.get());
-
-#endif
-
 
 	_binGenerator.reset(new BinGeneratorComponent());
 	//addAndMakeVisible(_binGenerator.get());
 
+
+	_contentComp.reset(new ContentComponent());
+	//addAndMakeVisible(_contentComp.get());
+
+	addAndMakeVisible(&contentViewport);
+
+	contentViewport.setViewedComponent(_contentComp.get(), false);
 
 	tbAbout->onClick = [this]() {
 
@@ -173,26 +144,19 @@ void MainComponent::resized()
 	
 	auto r = getLocalBounds();
 		
+	juce::AttributedString attributedText;
+	attributedText.append(Icon->getText(), Icon->getFont());
+	attributedText.setJustification(juce::Justification::right);
+	int textWidth;
+	int textHeight;
+	TryToFit(attributedText, getWidth(), getHeight(), textWidth, textHeight);
+	menuHeight = textHeight;
+	auto topRect = r.removeFromTop(textHeight);
+	auto topIconRect = topRect.removeFromLeft(textWidth);
+	Icon->setBounds(topIconRect.toNearestInt());
 
-
-
-
-		juce::AttributedString attributedText;
-		attributedText.append(Icon->getText(), Icon->getFont());
-		attributedText.setJustification(juce::Justification::right);
-		int textWidth;
-		int textHeight;
-		TryToFit(attributedText, getWidth(), getHeight(), textWidth, textHeight);
-		menuHeight = textHeight;
-		auto topRect = r.removeFromTop(textHeight);
-		auto topIconRect = topRect.removeFromLeft(textWidth);
-		Icon->setBounds(topIconRect.toNearestInt());
-
-		//testlbl->setBounds(topRect.toNearestInt());
+	//testlbl->setBounds(topRect.toNearestInt());
 	
-
-
-
 
 // add menu
 
@@ -243,115 +207,14 @@ void MainComponent::resized()
 
 	fb.performLayout(menuArea);                  // [6]
 
-
-#ifdef  TT
-	auto bookLibraryRect = r.removeFromTop(105.f );
-	bookLibrary->setBounds(bookLibraryRect.toNearestInt());
-
-
-
-	
-	float difficultyWidth = 780.f;
-	auto difficultyArea = r.removeFromTop(75.f);
-	float leftNotUse = (getWidth() - difficultyWidth) / 2.0;
-	difficultyArea.removeFromLeft(leftNotUse);
-	difficultyArea.removeFromRight(leftNotUse);
-
-	juce::FlexBox fbDifficulty;                                               // [1]
-	fbDifficulty.flexDirection = juce::FlexBox::Direction::row;
-	fbDifficulty.flexWrap = juce::FlexBox::Wrap::wrap;                        // [2]
-	fbDifficulty.justifyContent = juce::FlexBox::JustifyContent::center;      // [3]
-	fbDifficulty.alignContent = juce::FlexBox::AlignContent::center;       // [4]
-
-	fi = juce::FlexItem(c1).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
-	fbDifficulty.items.add(fi);
-
-	//fi = juce::FlexItem(c2).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
-	//fbDifficulty.items.add(fi);
-
-	//fi = juce::FlexItem(c3).withMinWidth(200).withMaxWidth(200).withMinHeight(75).withMaxHeight(75);
-	//fbDifficulty.items.add(fi);
-
-	fbDifficulty.performLayout(difficultyArea);
-
-
-
-	//////////////////////////////////
-	//
-	//
-	//style
-	//////////////////////////////////
-	//height 40      lable width = whole width - 60
-
-	int maxStyleWidth = getWidth() - 20 * 2;
-	int spacing = 10;
-
-	int totalW = 0;
-	for (int i = 0; i < 10; i++)
-	{
-		totalW += styles1[i]->getIdealWidth();
-	}
-
-	totalW += (10 - 1) * spacing;
-
-	int rows = totalW / maxStyleWidth + 1;
-
-	auto styleRect = r.removeFromTop(TStyleComponent::_expectHeight * rows + rows * 20/*  20 is margin */).toNearestInt();
-
-
-	auto lnotused = styleRect.removeFromLeft(20);
-	auto rnotused = styleRect.removeFromRight(20);
-
-	juce::FlexBox fbStyles1;                                              
-	fbStyles1.flexDirection = juce::FlexBox::Direction::row;
-	fbStyles1.flexWrap = juce::FlexBox::Wrap::wrap;                        
-	fbStyles1.justifyContent = juce::FlexBox::JustifyContent::spaceAround;    
-	fbStyles1.alignContent = juce::FlexBox::AlignContent::center;       
-
-	for (int i = 0; i < 10; i++)
-	{
-		auto idealWidth = styles1[i]->getIdealWidth();
-		auto fis = juce::FlexItem(*styles1[i]).withMinWidth(idealWidth).withMaxWidth(idealWidth).withMinHeight(TStyleComponent::_expectHeight).withMaxHeight(TStyleComponent::_expectHeight)
-			.withMargin(FlexItem::Margin(0, 10, 20, 0));
-		fbStyles1.items.add(fis);
-	}
-
-	fbStyles1.performLayout(styleRect);
-
-
-
-	
-
-
-
-
-	/////////////////
-	//
-	//search 
-	////////////////
-	r.removeFromTop(48);
-	auto searchArea = r.removeFromTop(48);
-
-
-	juce::FlexBox fbSearch;
-	fbSearch.flexDirection = juce::FlexBox::Direction::row;
-	fbSearch.flexWrap = juce::FlexBox::Wrap::noWrap;
-	fbSearch.justifyContent = juce::FlexBox::JustifyContent::center;
-	fbSearch.alignContent = juce::FlexBox::AlignContent::center;
-
- 
-	 
-	auto fitemsearch = juce::FlexItem(*_searchCom).withMinWidth(500).withMaxWidth(500).withMinHeight(48).withMaxHeight(48);
-		
-	fbSearch.items.add(fitemsearch);
  
 
-	fbSearch.performLayout(searchArea);
-
-
-#endif //  TT
 	
+	contentViewport.setBounds(r);
+	_contentComp->setBounds(r.getX(), r.getY(), r.getWidth(), r.getHeight() + 500);
 
+
+	//contentViewport.setBounds(100, 100, 100, 100);
 	
 	return;
 	

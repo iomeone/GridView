@@ -397,6 +397,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ContentComponent.cpp">
+      <Filter>GirdView\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BinGeneratorComponent.cpp">
       <Filter>GirdView\Source</Filter>
     </ClCompile>
@@ -2277,6 +2280,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\ContentComponent.h">
+      <Filter>GirdView\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\BinGeneratorComponent.h">
       <Filter>GirdView\Source</Filter>
     </ClInclude>
