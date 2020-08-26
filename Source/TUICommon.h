@@ -17,5 +17,5 @@
 #define LEFT	2
 #define RIGHT	3
 #define CENTER	4
-
+DrawablePath * getThumbnailPath(const int type, const bool on, const bool over);
 DrawablePath * getDockablePath(const int type, const bool on, const bool over);
