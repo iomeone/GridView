@@ -53,19 +53,25 @@ ContentComponent::ContentComponent ()
 	{
 		styles1.add(new TStyleComponent(String::repeatedString(String(i), i % 10 + 1)
 		));
-	}
-
-
-
-	for (int i = 0; i < styles1.size(); ++i)
-	{
 		addAndMakeVisible(styles1[i]);
 	}
 
 
+	for (int i = 0; i < 10; i++)
+	{
+		_thumbnails.add(new ThumbnailComponent());
+		addAndMakeVisible(_thumbnails[i]);
+	}
+
+	//_thumbnails
+
 
 	_searchCom.reset(new SearchComponent());
 	addAndMakeVisible(_searchCom.get());
+
+	//_thumbnail.reset(new ThumbnailComponent());
+	//addAndMakeVisible(_thumbnail.get());
+
 
 
     //[/Constructor_pre]
@@ -168,22 +174,24 @@ void ContentComponent::resized()
 
 	auto lnotused = styleRect.removeFromLeft(20);
 	auto rnotused = styleRect.removeFromRight(20);
-
-	juce::FlexBox fbStyles1;
-	fbStyles1.flexDirection = juce::FlexBox::Direction::row;
-	fbStyles1.flexWrap = juce::FlexBox::Wrap::wrap;
-	fbStyles1.justifyContent = juce::FlexBox::JustifyContent::spaceAround;
-	fbStyles1.alignContent = juce::FlexBox::AlignContent::center;
-
-	for (int i = 0; i < 10; i++)
 	{
-		auto idealWidth = styles1[i]->getIdealWidth();
-		auto fis = juce::FlexItem(*styles1[i]).withMinWidth(idealWidth).withMaxWidth(idealWidth).withMinHeight(TStyleComponent::_expectHeight).withMaxHeight(TStyleComponent::_expectHeight)
-			.withMargin(FlexItem::Margin(0, 10, 20, 0));
-		fbStyles1.items.add(fis);
-	}
 
-	fbStyles1.performLayout(styleRect);
+		juce::FlexBox fbStyles1;
+		fbStyles1.flexDirection = juce::FlexBox::Direction::row;
+		fbStyles1.flexWrap = juce::FlexBox::Wrap::wrap;
+		fbStyles1.justifyContent = juce::FlexBox::JustifyContent::spaceAround;
+		fbStyles1.alignContent = juce::FlexBox::AlignContent::center;
+
+		for (int i = 0; i < 10; i++)
+		{
+			auto idealWidth = styles1[i]->getIdealWidth();
+			auto fis = juce::FlexItem(*styles1[i]).withMinWidth(idealWidth).withMaxWidth(idealWidth).withMinHeight(TStyleComponent::_expectHeight).withMaxHeight(TStyleComponent::_expectHeight)
+				.withMargin(FlexItem::Margin(0, 10, 20, 0));
+			fbStyles1.items.add(fis);
+		}
+
+		fbStyles1.performLayout(styleRect);
+	}
 
 
 
@@ -215,6 +223,42 @@ void ContentComponent::resized()
 
 	fbSearch.performLayout(searchArea);
 
+	//_thumbnail->setBounds(r);
+
+
+
+	
+
+
+
+
+	{
+		juce::Rectangle<float> rForThumbnail(0, r.getY(), getWidth(), INT32_MAX);
+
+
+		juce::FlexBox fbStyles1;
+		fbStyles1.flexDirection = juce::FlexBox::Direction::row;
+		fbStyles1.flexWrap = juce::FlexBox::Wrap::wrap;
+		fbStyles1.justifyContent = juce::FlexBox::JustifyContent::spaceAround;
+		fbStyles1.alignContent = juce::FlexBox::AlignContent::flexStart;
+
+		for (int i = 0; i < 10; i++)
+		{
+			auto idealWidth = 280;
+			auto idealHeight = 380;
+			auto fis = juce::FlexItem(*_thumbnails[i]).withMinWidth(idealWidth).withMaxWidth(idealWidth).withMinHeight(idealHeight).withMaxHeight(idealHeight)
+				.withMargin(FlexItem::Margin(0, 10, 20, 0));
+			fbStyles1.items.add(fis);
+		}
+
+		fbStyles1.performLayout(rForThumbnail);
+	}
+
+
+	// judge the auctual height
+	auto curBound = getBounds();
+	curBound.setHeight(_thumbnails[9]->getY() + _thumbnails[9]->getHeight() );
+	this->setBounds(curBound);
 
     //[/UserResized]
 }
@@ -222,6 +266,32 @@ void ContentComponent::resized()
 
 
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
+
+int ContentComponent::getIdealHeight()
+{
+	juce::Rectangle<float> rForThumbnail(0, 0, getWidth(), INT32_MAX);
+
+
+	juce::FlexBox fbStyles1;
+	fbStyles1.flexDirection = juce::FlexBox::Direction::row;
+	fbStyles1.flexWrap = juce::FlexBox::Wrap::wrap;
+	fbStyles1.justifyContent = juce::FlexBox::JustifyContent::spaceAround;
+	fbStyles1.alignContent = juce::FlexBox::AlignContent::flexStart;
+
+	for (int i = 0; i < 10; i++)
+	{
+		auto idealWidth = 280;
+		auto idealHeight = 380;
+		auto fis = juce::FlexItem(*_thumbnails[i]).withMinWidth(idealWidth).withMaxWidth(idealWidth).withMinHeight(idealHeight).withMaxHeight(idealHeight)
+			.withMargin(FlexItem::Margin(0, 10, 20, 0));
+		fbStyles1.items.add(fis);
+	}
+
+	fbStyles1.performLayout(rForThumbnail);
+
+	return 0;
+
+}
 //[/MiscUserCode]
 
 

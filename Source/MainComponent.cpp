@@ -211,7 +211,7 @@ void MainComponent::resized()
 
 	
 	contentViewport.setBounds(r);
-	_contentComp->setBounds(r.getX(), r.getY(), r.getWidth(), r.getHeight() + 500);
+	_contentComp->setBounds(r.getX(), r.getY(), r.getWidth(), r.getHeight());
 
 
 	//contentViewport.setBounds(100, 100, 100, 100);

@@ -25,7 +25,7 @@
 #include "TComponent.h"
 #include "TStyleComponent.h"
 #include "SearchComponent.h"
-
+#include "ThumbnailComponent.h"
 //[/Headers]
 
 
@@ -47,6 +47,7 @@ public:
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
+	int getIdealHeight();
     //[/UserMethods]
 
     void paint (Graphics& g) override;
@@ -66,7 +67,9 @@ private:
 	std::unique_ptr< SearchComponent> _searchCom;
 
 
+	juce::OwnedArray< ThumbnailComponent> _thumbnails;
 
+	//std::unique_ptr< ThumbnailComponent> _thumbnail;
 
 
     //[/UserVariables]
