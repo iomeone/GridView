@@ -53,6 +53,9 @@ public:
     void paint (Graphics& g) override;
     void resized() override;
 
+    // Binary resources:
+    static const char* title____bin;
+    static const int title____binSize;
 
 
 private:
@@ -69,8 +72,7 @@ private:
 
 	juce::OwnedArray< ThumbnailComponent> _thumbnails;
 
-	//std::unique_ptr< ThumbnailComponent> _thumbnail;
-
+	std::vector<String> _styles { "CHORDS","CLASSICAL","ELECTRONIC","FOLK","FUNK","GOSPEL","HIP","HOP","JAZZ","KIDS","POP","RAP","RHYTHM","AND","BLUES","ROCK","SOUL","THEMES"};
 
     //[/UserVariables]
 

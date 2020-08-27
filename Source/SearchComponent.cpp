@@ -126,7 +126,7 @@ void SearchComponent::resized()
     //[/UserPreResize]
 
     textEditor->setBounds (5, 5, getWidth() - 40, getHeight() - 10);
-    _btnSearch->setBounds (getWidth() - 40 - 10 , 4, 40, 40);
+    _btnSearch->setBounds (getWidth() - 30, 4, 30, 30);
     //[UserResized] Add your own custom resize handling here..
 
     //[/UserResized]
