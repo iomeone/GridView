@@ -128,8 +128,6 @@ void TComponent::paint (Graphics& g)
 
     //[/UserPrePaint]
 
-    g.fillAll (Colours::black);
-
     //[UserPaint] Add your own custom painting code here..
 
     //[/UserPaint]
@@ -185,7 +183,7 @@ BEGIN_JUCER_METADATA
                  parentClasses="public Component" constructorParams="String s"
                  variableInitialisers="_s(s)" snapPixels="8" snapActive="1" snapShown="1"
                  overlayOpacity="0.330" fixedSize="0" initialWidth="600" initialHeight="400">
-  <BACKGROUND backgroundColour="ff000000"/>
+  <BACKGROUND backgroundColour="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

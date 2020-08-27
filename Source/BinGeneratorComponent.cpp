@@ -465,10 +465,10 @@ void BinGeneratorComponent::paint (Graphics& g)
         int x = 996, y = 308, width = 316, height = 276;
         //[UserPaintCustomArguments] Customize the painting arguments here..
 
-		g.setColour(Colours::black);
-		g.drawImage(cachedImage_heartandsoulpiano_png_1,
-			x, y, width, height,
-			0, 0, cachedImage_heartandsoulpiano_png_1.getWidth(), cachedImage_heartandsoulpiano_png_1.getHeight());
+    		g.setColour(Colours::black);
+    		g.drawImage(cachedImage_heartandsoulpiano_png_1,
+    			x, y, width, height,
+    			0, 0, cachedImage_heartandsoulpiano_png_1.getWidth(), cachedImage_heartandsoulpiano_png_1.getHeight());
 
         //[/UserPaintCustomArguments]
     }
@@ -559,11 +559,11 @@ void BinGeneratorComponent::buttonClicked (Button* buttonThatWasClicked)
 
 				MemoryBlock themePngBlock = ms.getMemoryBlock();
 
-				
+
 				sheetBin.setProperty("themepng", themePngBlock, nullptr);
 			}
 
-			
+
 			{
 				juce::File TexturePngFile = curDir.getChildFile(texturePngName);
 				MemoryOutputStream ms;
@@ -580,7 +580,7 @@ void BinGeneratorComponent::buttonClicked (Button* buttonThatWasClicked)
 				juce::File sheetfile = curDir.getChildFile(fileName);
 				sheetBin.setProperty("sheet", sheetfile.loadFileAsString(), nullptr);
 			}
-				
+
 			{
 				juce::File fpFile = curDir.getChildFile("fParticle.txt");
 				sheetBin.setProperty("frag", fpFile.loadFileAsString(), nullptr);
