@@ -126,7 +126,7 @@ void SearchComponent::resized()
     //[/UserPreResize]
 
     textEditor->setBounds (5, 5, getWidth() - 40, getHeight() - 10);
-    _btnSearch->setBounds (getWidth() - 30, 4, 30, 30);
+    _btnSearch->setBounds (getWidth() - 50, 4, 40, 40);
     //[UserResized] Add your own custom resize handling here..
 
     //[/UserResized]
@@ -160,7 +160,7 @@ BEGIN_JUCER_METADATA
               outlinecol="992020" initialText="" multiline="0" retKeyStartsLine="0"
               readonly="0" scrollbars="0" caret="1" popupmenu="1"/>
   <GENERICCOMPONENT name="searchButton" id="c2a79b23342d64d5" memberName="_btnSearch"
-                    virtualName="DrawableButton" explicitFocusOrder="0" pos="30R 4 30 30"
+                    virtualName="DrawableButton" explicitFocusOrder="0" pos="50R 4 40 40"
                     class="DrawableButton" params="&quot;searchButton&quot;, DrawableButton::ImageFitted"/>
 </JUCER_COMPONENT>
 

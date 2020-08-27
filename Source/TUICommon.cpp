@@ -84,16 +84,16 @@ DrawablePath * getDockablePath(const int type, const bool on, const bool over)
 	if (on)
 	{
 		if (over)
-			drawable->setFill(FillType(Colour(0xffcccccc)));
+			drawable->setFill(FillType(Colour(0xffffffff)));
 		else
-			drawable->setFill(FillType(Colour(0xff999999)));
+			drawable->setFill(FillType(Colour(0xffcccccc)));
 	}
 	else
 	{
 		if (over)
-			drawable->setFill(FillType(Colour(0xff999999)));
+			drawable->setFill(FillType(Colour(0xffffffff)));
 		else
-			drawable->setFill(FillType(Colour(0xff4c4c4c)));
+			drawable->setFill(FillType(Colour(0xffcccccc)));
 	}
 	return drawable;
 }
