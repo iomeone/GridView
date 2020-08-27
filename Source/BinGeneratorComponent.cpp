@@ -539,7 +539,7 @@ void BinGeneratorComponent::buttonClicked (Button* buttonThatWasClicked)
 			checkFile(curDir, "fTie.txt", _textEditorTieFragment3);
 			checkFile(curDir, "vTie.txt", _textEditorTieVetex);
 
-			String themePngName = fileName + "theme.png";
+			String themePngName = fileName + "theme.jpg";
 			checkFile(curDir, themePngName, _textEditorPicture);
 
 
