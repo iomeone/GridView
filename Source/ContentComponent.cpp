@@ -63,6 +63,7 @@ ContentComponent::ContentComponent ()
 
 		const var*   binaryData = v.getPropertyPointer("themepng");
 
+		for(int i = 0 ; i< 20; i++)
 		if (binaryData)
 		{
 			juce::Colours::lightcoral;
@@ -87,98 +88,6 @@ ContentComponent::ContentComponent ()
 
 							addAndMakeVisible(thumbnail);
 						}
-						{
-							juce::Image image = ImageCache::getFromMemory(mb->getData(), mb->getSize());
-							auto thumbnail = new ThumbnailComponent();
-							std::unique_ptr<ImageButton>& tmb = thumbnail->getThumbnailButton();
-							tmb->setImages(false, true, false, image, 1.0, juce::Colours::transparentWhite, image, 1.0,
-								juce::Colour((uint8)0xf0, (uint8)0xf0, (uint8)0xf0, (uint8)0x20),
-								image, 1.0,
-								juce::Colour((uint8)0xf0, (uint8)0x80, (uint8)0x80, (uint8)0x20));
-
-							_thumbnails.add(thumbnail);
-
-							addAndMakeVisible(thumbnail);
-						}
-						{
-							juce::Image image = ImageCache::getFromMemory(mb->getData(), mb->getSize());
-							auto thumbnail = new ThumbnailComponent();
-							std::unique_ptr<ImageButton>& tmb = thumbnail->getThumbnailButton();
-							tmb->setImages(false, true, false, image, 1.0, juce::Colours::transparentWhite, image, 1.0,
-								juce::Colour((uint8)0xf0, (uint8)0xf0, (uint8)0xf0, (uint8)0x20),
-								image, 1.0,
-								juce::Colour((uint8)0xf0, (uint8)0x80, (uint8)0x80, (uint8)0x20));
-
-							_thumbnails.add(thumbnail);
-
-							addAndMakeVisible(thumbnail);
-						}
-						{
-							juce::Image image = ImageCache::getFromMemory(mb->getData(), mb->getSize());
-							auto thumbnail = new ThumbnailComponent();
-							std::unique_ptr<ImageButton>& tmb = thumbnail->getThumbnailButton();
-							tmb->setImages(false, true, false, image, 1.0, juce::Colours::transparentWhite, image, 1.0,
-								juce::Colour((uint8)0xf0, (uint8)0xf0, (uint8)0xf0, (uint8)0x20),
-								image, 1.0,
-								juce::Colour((uint8)0xf0, (uint8)0x80, (uint8)0x80, (uint8)0x20));
-
-							_thumbnails.add(thumbnail);
-
-							addAndMakeVisible(thumbnail);
-						}
-						{
-							juce::Image image = ImageCache::getFromMemory(mb->getData(), mb->getSize());
-							auto thumbnail = new ThumbnailComponent();
-							std::unique_ptr<ImageButton>& tmb = thumbnail->getThumbnailButton();
-							tmb->setImages(false, true, false, image, 1.0, juce::Colours::transparentWhite, image, 1.0,
-								juce::Colour((uint8)0xf0, (uint8)0xf0, (uint8)0xf0, (uint8)0x20),
-								image, 1.0,
-								juce::Colour((uint8)0xf0, (uint8)0x80, (uint8)0x80, (uint8)0x20));
-
-							_thumbnails.add(thumbnail);
-
-							addAndMakeVisible(thumbnail);
-						}
-						{
-							juce::Image image = ImageCache::getFromMemory(mb->getData(), mb->getSize());
-							auto thumbnail = new ThumbnailComponent();
-							std::unique_ptr<ImageButton>& tmb = thumbnail->getThumbnailButton();
-							tmb->setImages(false, true, false, image, 1.0, juce::Colours::transparentWhite, image, 1.0,
-								juce::Colour((uint8)0xf0, (uint8)0xf0, (uint8)0xf0, (uint8)0x20),
-								image, 1.0,
-								juce::Colour((uint8)0xf0, (uint8)0x80, (uint8)0x80, (uint8)0x20));
-
-							_thumbnails.add(thumbnail);
-
-							addAndMakeVisible(thumbnail);
-						}
-						{
-							juce::Image image = ImageCache::getFromMemory(mb->getData(), mb->getSize());
-							auto thumbnail = new ThumbnailComponent();
-							std::unique_ptr<ImageButton>& tmb = thumbnail->getThumbnailButton();
-							tmb->setImages(false, true, false, image, 1.0, juce::Colours::transparentWhite, image, 1.0,
-								juce::Colour((uint8)0xf0, (uint8)0xf0, (uint8)0xf0, (uint8)0x20),
-								image, 1.0,
-								juce::Colour((uint8)0xf0, (uint8)0x80, (uint8)0x80, (uint8)0x20));
-
-							_thumbnails.add(thumbnail);
-
-							addAndMakeVisible(thumbnail);
-						}
-						{
-							juce::Image image = ImageCache::getFromMemory(mb->getData(), mb->getSize());
-							auto thumbnail = new ThumbnailComponent();
-							std::unique_ptr<ImageButton>& tmb = thumbnail->getThumbnailButton();
-							tmb->setImages(false, true, false, image, 1.0, juce::Colours::transparentWhite, image, 1.0,
-								juce::Colour((uint8)0xf0, (uint8)0xf0, (uint8)0xf0, (uint8)0x20),
-								image, 1.0,
-								juce::Colour((uint8)0xf0, (uint8)0x80, (uint8)0x80, (uint8)0x20));
-
-							_thumbnails.add(thumbnail);
-
-							addAndMakeVisible(thumbnail);
-						}
-
 						
 					}
 				}
