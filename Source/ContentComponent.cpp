@@ -39,7 +39,7 @@ ContentComponent::ContentComponent ()
 	f.setSizeAndStyle(fontSize, Font::FontStyleFlags::bold, 1.0, 0);
 	bookLibrary->setFont(f);
 	bookLibrary->setJustificationType(Justification::centred);
-	bookLibrary->setColour(juce::Label::ColourIds::backgroundColourId, juce::Colours::black);
+	bookLibrary->setColour(juce::Label::ColourIds::backgroundColourId, juce::Colour(52, 58, 64));
 	//Icon->setBorderSize(juce::BorderSize<int>(5));  //need set outline width
 	//Icon->setColour(juce::Label::outlineColourId, juce::Colours::black);
 	addAndMakeVisible(bookLibrary.get());

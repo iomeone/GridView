@@ -60,7 +60,7 @@ public:
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
-	float fontSize{ 100.0 };
+	float fontSize{ 70.0 };
 	TComponent c1;
 	TComponent c2;
 	TComponent c3;

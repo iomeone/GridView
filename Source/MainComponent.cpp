@@ -120,7 +120,7 @@ void MainComponent::paint (Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     //g.fillAll (getLookAndFeel().findColour (ResizableWindow::backgroundColourId));
-	g.fillAll(juce::Colour(91, 41, 154));
+	g.fillAll(juce::Colour(35, 62, 84));
 
     //g.setFont (Font (16.0f));
     //g.setColour (Colours::white);
