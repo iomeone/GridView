@@ -112,8 +112,8 @@ void ThumbnailComponent::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    _btnThumbnail->setBounds (0, 0, proportionOfWidth (1.0000f), proportionOfHeight (0.6184f));
-    _thumbnailImageButton->setBounds (0, 0, proportionOfWidth (1.0000f), proportionOfHeight (0.6184f));
+    _btnThumbnail->setBounds (0, 25, proportionOfWidth (1.0000f), proportionOfHeight (0.6184f));
+    _thumbnailImageButton->setBounds (0, 25, proportionOfWidth (1.0000f), getHeight() - 25);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -154,14 +154,14 @@ BEGIN_JUCER_METADATA
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ff323e44"/>
   <GENERICCOMPONENT name="ThumbnailButton" id="e1dd5cf488f648b" memberName="_btnThumbnail"
-                    virtualName="DrawableButton" explicitFocusOrder="0" pos="0 0 100% 61.841%"
+                    virtualName="DrawableButton" explicitFocusOrder="0" pos="0 25 100% 61.841%"
                     class="DrawableButton" params="&quot;ThumbnailButton&quot;, DrawableButton::ImageFitted"/>
   <IMAGEBUTTON name="ThumbnailImageButton" id="eeaf3a7ae9452193" memberName="_thumbnailImageButton"
-               virtualName="" explicitFocusOrder="0" pos="0 0 100% 61.841%"
-               buttonText="new button" connectedEdges="0" needsCallback="1"
-               radioGroupId="0" keepProportions="1" resourceNormal="" opacityNormal="1.0"
-               colourNormal="0" resourceOver="" opacityOver="1.0" colourOver="0"
-               resourceDown="" opacityDown="1.0" colourDown="0"/>
+               virtualName="" explicitFocusOrder="0" pos="0 25 100% 25M" buttonText="new button"
+               connectedEdges="0" needsCallback="1" radioGroupId="0" keepProportions="1"
+               resourceNormal="" opacityNormal="1.0" colourNormal="0" resourceOver=""
+               opacityOver="1.0" colourOver="0" resourceDown="" opacityDown="1.0"
+               colourDown="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
