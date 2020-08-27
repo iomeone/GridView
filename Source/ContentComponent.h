@@ -72,7 +72,27 @@ private:
 
 	juce::OwnedArray< ThumbnailComponent> _thumbnails;
 
-	std::vector<String> _styles { "CHORDS","CLASSICAL","ELECTRONIC","FOLK","FUNK","GOSPEL","HIP","HOP","JAZZ","KIDS","POP","RAP","RHYTHM","AND","BLUES","ROCK","SOUL","THEMES"};
+	struct TStyle {
+		String s;
+		Colour c;
+	};
+	std::vector<TStyle> _styles{ {"CHORDS", Colour(173, 109, 219)},
+								{"CLASSICAL", Colour(51, 226, 247)},
+								{"ELECTRONIC", Colour(158, 69, 51)},
+								{"FOLK", Colour(18, 18, 18)},
+								{"FUNK", Colour(143, 8, 156)},
+								{"GOSPEL", Colour(7, 245, 134)},
+								{"HIP HOP", Colour(227, 34, 34)},
+								{"JAZZ", Colour(145, 15, 3)},
+								{"KIDS", Colour(228, 254, 3)},
+								{"POP", Colour(253, 35, 96)},
+								{"RAP",  Colour(219, 98, 42)},
+								{"RHYTHM AND BLUES", Colour(5, 61, 158)},
+
+								{"ROCK", Colour(5, 125, 2)},
+								{"SOUL", Colour(146, 5, 150)},
+								{"THEMES", Colour(255, 212, 27)}
+	};
 
     //[/UserVariables]
 

@@ -28,8 +28,8 @@ float TStyleComponent::_expectHeight = 40;
 //[/MiscUserDefs]
 
 //==============================================================================
-TStyleComponent::TStyleComponent (String styleText)
-    : _styleText(styleText)
+TStyleComponent::TStyleComponent (String styleText, Colour circleColor)
+    : _styleText(styleText), _circleColor(circleColor)
 {
     //[Constructor_pre] You can add your own custom stuff here..
 	_lblStyleText.reset(new Label("new label",
@@ -74,8 +74,7 @@ void TStyleComponent::paint (Graphics& g)
     g.fillAll (Colour (0xff323e44));
 
     //[UserPaint] Add your own custom painting code here..
-	Colour fillColour = Colour(0xff3c684b);
-	g.setColour(fillColour);
+	g.setColour(_circleColor);
 	g.fillEllipse(_circleRect);
 
     //[/UserPaint]
@@ -118,10 +117,10 @@ void TStyleComponent::resized()
 BEGIN_JUCER_METADATA
 
 <JUCER_COMPONENT documentType="Component" className="TStyleComponent" componentName=""
-                 parentClasses="public Component" constructorParams="String styleText"
-                 variableInitialisers="_styleText(styleText)" snapPixels="8" snapActive="1"
-                 snapShown="1" overlayOpacity="0.330" fixedSize="0" initialWidth="600"
-                 initialHeight="400">
+                 parentClasses="public Component" constructorParams="String styleText, Colour circleColor"
+                 variableInitialisers="_styleText(styleText), _circleColor(circleColor)"
+                 snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
+                 fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ff323e44"/>
 </JUCER_COMPONENT>
 

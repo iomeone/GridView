@@ -51,7 +51,7 @@ ContentComponent::ContentComponent ()
 
 	for (auto it = _styles.begin(); it != _styles.end(); it++)
 	{
-		auto c = new TStyleComponent(*it);
+		auto c = new TStyleComponent(it->s, it->c);
 		styles1.add(c);
 		addAndMakeVisible(c);
 	}

@@ -37,7 +37,7 @@ class TStyleComponent  : public Component
 {
 public:
     //==============================================================================
-    TStyleComponent (String styleText);
+    TStyleComponent (String styleText, Colour circleColor);
     ~TStyleComponent();
 
     //==============================================================================
@@ -77,6 +77,7 @@ private:
 	juce::Rectangle<int> _lableRect;
 	std::unique_ptr<juce::Label>  _lblStyleText;
 	String _styleText;
+	juce::Colour _circleColor{ 0xff3c684b };
 
 public:
 	static float _expectHeight  ;
