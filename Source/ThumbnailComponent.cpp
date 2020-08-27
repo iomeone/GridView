@@ -37,6 +37,15 @@ ThumbnailComponent::ThumbnailComponent ()
     addAndMakeVisible (_btnThumbnail.get());
     _btnThumbnail->setName ("ThumbnailButton");
 
+    _thumbnailImageButton.reset (new ImageButton ("ThumbnailImageButton"));
+    addAndMakeVisible (_thumbnailImageButton.get());
+    _thumbnailImageButton->setButtonText (TRANS("new button"));
+    _thumbnailImageButton->addListener (this);
+
+    _thumbnailImageButton->setImages (false, true, true,
+                                      Image(), 1.000f, Colour (0x00000000),
+                                      Image(), 1.000f, Colour (0x00000000),
+                                      Image(), 1.000f, Colour (0x00000000));
 
     //[UserPreSize]
 
@@ -62,6 +71,7 @@ ThumbnailComponent::ThumbnailComponent ()
 	delete downImage; delete downImageOn;
 	delete disabledImage; delete disabledImageOn;
 
+	//_thumbnailImageButton->setImages(false, )
 
     //[/UserPreSize]
 
@@ -78,6 +88,7 @@ ThumbnailComponent::~ThumbnailComponent()
     //[/Destructor_pre]
 
     _btnThumbnail = nullptr;
+    _thumbnailImageButton = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -101,9 +112,25 @@ void ThumbnailComponent::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    _btnThumbnail->setBounds (0, 0, proportionOfWidth (1.0000f), proportionOfHeight (0.6180f));
+    _btnThumbnail->setBounds (0, 0, proportionOfWidth (1.0000f), proportionOfHeight (0.6184f));
+    _thumbnailImageButton->setBounds (0, 0, proportionOfWidth (1.0000f), proportionOfHeight (0.6184f));
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
+}
+
+void ThumbnailComponent::buttonClicked (Button* buttonThatWasClicked)
+{
+    //[UserbuttonClicked_Pre]
+    //[/UserbuttonClicked_Pre]
+
+    if (buttonThatWasClicked == _thumbnailImageButton.get())
+    {
+        //[UserButtonCode__thumbnailImageButton] -- add your button handler code here..
+        //[/UserButtonCode__thumbnailImageButton]
+    }
+
+    //[UserbuttonClicked_Post]
+    //[/UserbuttonClicked_Post]
 }
 
 
@@ -129,6 +156,12 @@ BEGIN_JUCER_METADATA
   <GENERICCOMPONENT name="ThumbnailButton" id="e1dd5cf488f648b" memberName="_btnThumbnail"
                     virtualName="DrawableButton" explicitFocusOrder="0" pos="0 0 100% 61.841%"
                     class="DrawableButton" params="&quot;ThumbnailButton&quot;, DrawableButton::ImageFitted"/>
+  <IMAGEBUTTON name="ThumbnailImageButton" id="eeaf3a7ae9452193" memberName="_thumbnailImageButton"
+               virtualName="" explicitFocusOrder="0" pos="0 0 100% 61.841%"
+               buttonText="new button" connectedEdges="0" needsCallback="1"
+               radioGroupId="0" keepProportions="1" resourceNormal="" opacityNormal="1.0"
+               colourNormal="0" resourceOver="" opacityOver="1.0" colourOver="0"
+               resourceDown="" opacityDown="1.0" colourDown="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

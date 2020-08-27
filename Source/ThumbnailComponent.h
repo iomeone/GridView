@@ -33,7 +33,8 @@
     Describe your class and how it works here!
                                                                     //[/Comments]
 */
-class ThumbnailComponent  : public Component
+class ThumbnailComponent  : public Component,
+                            public Button::Listener
 {
 public:
     //==============================================================================
@@ -46,6 +47,7 @@ public:
 
     void paint (Graphics& g) override;
     void resized() override;
+    void buttonClicked (Button* buttonThatWasClicked) override;
 
 
 
@@ -55,6 +57,7 @@ private:
 
     //==============================================================================
     std::unique_ptr<DrawableButton> _btnThumbnail;
+    std::unique_ptr<ImageButton> _thumbnailImageButton;
 
 
     //==============================================================================
