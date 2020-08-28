@@ -25,18 +25,6 @@
             file="Source/TStyleComponent.cpp"/>
       <FILE id="PKLaRw" name="TStyleComponent.h" compile="0" resource="0"
             file="Source/TStyleComponent.h"/>
-      <FILE id="gteGJ6" name="Component.h" compile="0" resource="0" file="Source/Component.h"/>
-      <FILE id="QnJcFI" name="SmoothScrollBar.cpp" compile="1" resource="0"
-            file="Source/SmoothScrollBar.cpp"/>
-      <FILE id="TDHGy7" name="SmoothScrollBar.h" compile="0" resource="0"
-            file="Source/SmoothScrollBar.h"/>
-      <FILE id="RuEFPV" name="StackHolder.cpp" compile="1" resource="0" file="Source/StackHolder.cpp"/>
-      <FILE id="wLnFir" name="StackHolder.h" compile="0" resource="0" file="Source/StackHolder.h"/>
-      <FILE id="g2Hkma" name="StackManager.cpp" compile="1" resource="0"
-            file="Source/StackManager.cpp"/>
-      <FILE id="HyGfJ8" name="StackManager.h" compile="0" resource="0" file="Source/StackManager.h"/>
-      <FILE id="UncTsa" name="StackPanel.cpp" compile="1" resource="0" file="Source/StackPanel.cpp"/>
-      <FILE id="Arekgo" name="StackPanel.h" compile="0" resource="0" file="Source/StackPanel.h"/>
       <FILE id="p4BTW6" name="TComponent.cpp" compile="1" resource="0" file="Source/TComponent.cpp"/>
       <FILE id="RUnc4v" name="TComponent.h" compile="0" resource="0" file="Source/TComponent.h"/>
       <FILE id="cHiGjO" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>

@@ -10,8 +10,6 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
-#include "StackManager.h"
-
 #include "BinGeneratorComponent.h"
 
 #include "ContentComponent.h"

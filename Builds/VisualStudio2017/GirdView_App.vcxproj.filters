@@ -415,18 +415,6 @@
     <ClCompile Include="..\..\Source\TStyleComponent.cpp">
       <Filter>GirdView\Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\SmoothScrollBar.cpp">
-      <Filter>GirdView\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\StackHolder.cpp">
-      <Filter>GirdView\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\StackManager.cpp">
-      <Filter>GirdView\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\StackPanel.cpp">
-      <Filter>GirdView\Source</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\TComponent.cpp">
       <Filter>GirdView\Source</Filter>
     </ClCompile>
@@ -2296,21 +2284,6 @@
       <Filter>GirdView\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\TStyleComponent.h">
-      <Filter>GirdView\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\Component.h">
-      <Filter>GirdView\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\SmoothScrollBar.h">
-      <Filter>GirdView\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\StackHolder.h">
-      <Filter>GirdView\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\StackManager.h">
-      <Filter>GirdView\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\StackPanel.h">
       <Filter>GirdView\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\TComponent.h">

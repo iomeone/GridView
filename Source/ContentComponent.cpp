@@ -34,7 +34,7 @@ ContentComponent::ContentComponent ()
 
 		//book library
 
-	bookLibrary.reset(new juce::Label("bk", "BOOK LIBRARY"));
+	bookLibrary.reset(new juce::Label("bk", "SHEET LIBRARY"));
 	auto f = bookLibrary->getFont();
 	f.setSizeAndStyle(fontSize, Font::FontStyleFlags::bold, 1.0, 0);
 	bookLibrary->setFont(f);

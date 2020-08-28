@@ -44,7 +44,7 @@ MainComponent::MainComponent() //, stylecom("teststyle123123123")// : manager(fa
 
 
 	//icon 
-	Icon.reset(new juce::Label("hi", "AIUOP"));
+	Icon.reset(new juce::Label("hi", "PIANO"));
 	auto f = Icon->getFont();
 	f.setSizeAndStyle(fontSize, Font::FontStyleFlags::plain, 1.0, 0);
 	Icon->setFont(f);
