@@ -75,6 +75,8 @@ public:
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 	Image cachedImage_heartandsoulpiano_png_1;
+	String fileName;
+	juce::File curDir;
     //[/UserVariables]
 
     //==============================================================================
