@@ -611,7 +611,7 @@ void BinGeneratorComponent::buttonClicked (Button* buttonThatWasClicked)
 				sheetBin.setProperty("vetexIndicator", fpFile.loadFileAsString(), nullptr);
 			}
 
-
+			sheetBin.setProperty("title", _textEditorTitle->getText(), nullptr);
 
 
 			File sheetDescribePngBin = curDir.getChildFile(_textEditorTitle->getText() + ".bin");
