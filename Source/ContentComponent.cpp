@@ -220,12 +220,6 @@ void ContentComponent::resized()
 	}
 
 
-
-
-
-
-
-
 	/////////////////
 	//
 	//search
