@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.0.4
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -34,18 +34,18 @@ BinGeneratorComponent::BinGeneratorComponent ()
 
     //[/Constructor_pre]
 
-    _labelTexturePng.reset (new Label ("new label",
-                                       TRANS("texture png\n")));
+    _labelTexturePng.reset (new juce::Label ("new label",
+                                             TRANS("texture png\n")));
     addAndMakeVisible (_labelTexturePng.get());
-    _labelTexturePng->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    _labelTexturePng->setJustificationType (Justification::centredLeft);
+    _labelTexturePng->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _labelTexturePng->setJustificationType (juce::Justification::centredLeft);
     _labelTexturePng->setEditable (false, false, false);
-    _labelTexturePng->setColour (TextEditor::textColourId, Colours::black);
-    _labelTexturePng->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    _labelTexturePng->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _labelTexturePng->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     _labelTexturePng->setBounds (40, 152, 150, 24);
 
-    _textEditorTexturePng.reset (new TextEditor ("texturePng"));
+    _textEditorTexturePng.reset (new juce::TextEditor ("texturePng"));
     addAndMakeVisible (_textEditorTexturePng.get());
     _textEditorTexturePng->setMultiLine (false);
     _textEditorTexturePng->setReturnKeyStartsNewLine (false);
@@ -53,25 +53,25 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorTexturePng->setScrollbarsShown (true);
     _textEditorTexturePng->setCaretVisible (true);
     _textEditorTexturePng->setPopupMenuEnabled (true);
-    _textEditorTexturePng->setText (String());
+    _textEditorTexturePng->setText (juce::String());
 
     _textEditorTexturePng->setBounds (216, 152, 472, 24);
 
-    _textButtonTexturePng.reset (new TextButton ("_openTexturePng"));
+    _textButtonTexturePng.reset (new juce::TextButton ("_openTexturePng"));
     addAndMakeVisible (_textButtonTexturePng.get());
     _textButtonTexturePng->setButtonText (TRANS("open"));
     _textButtonTexturePng->addListener (this);
 
     _textButtonTexturePng->setBounds (728, 152, 150, 24);
 
-    _textButtonxmlSheet.reset (new TextButton ("_openxmlSheet"));
+    _textButtonxmlSheet.reset (new juce::TextButton ("_openxmlSheet"));
     addAndMakeVisible (_textButtonxmlSheet.get());
     _textButtonxmlSheet->setButtonText (TRANS("open"));
     _textButtonxmlSheet->addListener (this);
 
     _textButtonxmlSheet->setBounds (728, 80, 150, 24);
 
-    _textEditorxmlSheet.reset (new TextEditor ("xmlSheet"));
+    _textEditorxmlSheet.reset (new juce::TextEditor ("xmlSheet"));
     addAndMakeVisible (_textEditorxmlSheet.get());
     _textEditorxmlSheet->setMultiLine (false);
     _textEditorxmlSheet->setReturnKeyStartsNewLine (false);
@@ -79,29 +79,29 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorxmlSheet->setScrollbarsShown (true);
     _textEditorxmlSheet->setCaretVisible (true);
     _textEditorxmlSheet->setPopupMenuEnabled (true);
-    _textEditorxmlSheet->setText (String());
+    _textEditorxmlSheet->setText (juce::String());
 
     _textEditorxmlSheet->setBounds (216, 80, 472, 24);
 
-    _labelXmlSheet.reset (new Label ("XmlSheet",
-                                     TRANS("XmlSheet")));
+    _labelXmlSheet.reset (new juce::Label ("XmlSheet",
+                                           TRANS("XmlSheet")));
     addAndMakeVisible (_labelXmlSheet.get());
-    _labelXmlSheet->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    _labelXmlSheet->setJustificationType (Justification::centredLeft);
+    _labelXmlSheet->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _labelXmlSheet->setJustificationType (juce::Justification::centredLeft);
     _labelXmlSheet->setEditable (false, false, false);
-    _labelXmlSheet->setColour (TextEditor::textColourId, Colours::black);
-    _labelXmlSheet->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    _labelXmlSheet->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _labelXmlSheet->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     _labelXmlSheet->setBounds (40, 80, 150, 24);
 
-    _textButtonParticleFragment.reset (new TextButton ("_openParticleFragment"));
+    _textButtonParticleFragment.reset (new juce::TextButton ("_openParticleFragment"));
     addAndMakeVisible (_textButtonParticleFragment.get());
     _textButtonParticleFragment->setButtonText (TRANS("open"));
     _textButtonParticleFragment->addListener (this);
 
     _textButtonParticleFragment->setBounds (732, 205, 150, 24);
 
-    _textEditorParticleFragment.reset (new TextEditor ("ParticleFragment"));
+    _textEditorParticleFragment.reset (new juce::TextEditor ("ParticleFragment"));
     addAndMakeVisible (_textEditorParticleFragment.get());
     _textEditorParticleFragment->setMultiLine (false);
     _textEditorParticleFragment->setReturnKeyStartsNewLine (false);
@@ -109,29 +109,29 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorParticleFragment->setScrollbarsShown (true);
     _textEditorParticleFragment->setCaretVisible (true);
     _textEditorParticleFragment->setPopupMenuEnabled (true);
-    _textEditorParticleFragment->setText (String());
+    _textEditorParticleFragment->setText (juce::String());
 
     _textEditorParticleFragment->setBounds (216, 200, 472, 24);
 
-    _labelParticleFragment.reset (new Label ("ParticleFragment",
-                                             TRANS("ParticleFragment")));
+    _labelParticleFragment.reset (new juce::Label ("ParticleFragment",
+                                                   TRANS("ParticleFragment")));
     addAndMakeVisible (_labelParticleFragment.get());
-    _labelParticleFragment->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    _labelParticleFragment->setJustificationType (Justification::centredLeft);
+    _labelParticleFragment->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _labelParticleFragment->setJustificationType (juce::Justification::centredLeft);
     _labelParticleFragment->setEditable (false, false, false);
-    _labelParticleFragment->setColour (TextEditor::textColourId, Colours::black);
-    _labelParticleFragment->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    _labelParticleFragment->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _labelParticleFragment->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     _labelParticleFragment->setBounds (44, 205, 150, 24);
 
-    _textButtonParticleVetex.reset (new TextButton ("_openParticleVetex"));
+    _textButtonParticleVetex.reset (new juce::TextButton ("_openParticleVetex"));
     addAndMakeVisible (_textButtonParticleVetex.get());
     _textButtonParticleVetex->setButtonText (TRANS("open"));
     _textButtonParticleVetex->addListener (this);
 
     _textButtonParticleVetex->setBounds (737, 264, 150, 24);
 
-    _textEditorParticleVetex.reset (new TextEditor ("ParticleVetex"));
+    _textEditorParticleVetex.reset (new juce::TextEditor ("ParticleVetex"));
     addAndMakeVisible (_textEditorParticleVetex.get());
     _textEditorParticleVetex->setMultiLine (false);
     _textEditorParticleVetex->setReturnKeyStartsNewLine (false);
@@ -139,29 +139,29 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorParticleVetex->setScrollbarsShown (true);
     _textEditorParticleVetex->setCaretVisible (true);
     _textEditorParticleVetex->setPopupMenuEnabled (true);
-    _textEditorParticleVetex->setText (String());
+    _textEditorParticleVetex->setText (juce::String());
 
     _textEditorParticleVetex->setBounds (216, 264, 472, 24);
 
-    _labelParticleVetex.reset (new Label ("ParticleVetex",
-                                          TRANS("ParticleVetex")));
+    _labelParticleVetex.reset (new juce::Label ("ParticleVetex",
+                                                TRANS("ParticleVetex")));
     addAndMakeVisible (_labelParticleVetex.get());
-    _labelParticleVetex->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    _labelParticleVetex->setJustificationType (Justification::centredLeft);
+    _labelParticleVetex->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _labelParticleVetex->setJustificationType (juce::Justification::centredLeft);
     _labelParticleVetex->setEditable (false, false, false);
-    _labelParticleVetex->setColour (TextEditor::textColourId, Colours::black);
-    _labelParticleVetex->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    _labelParticleVetex->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _labelParticleVetex->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     _labelParticleVetex->setBounds (40, 264, 150, 24);
 
-    _textButtonstaffFragment.reset (new TextButton ("_openstaffFragment"));
+    _textButtonstaffFragment.reset (new juce::TextButton ("_openstaffFragment"));
     addAndMakeVisible (_textButtonstaffFragment.get());
     _textButtonstaffFragment->setButtonText (TRANS("open"));
     _textButtonstaffFragment->addListener (this);
 
     _textButtonstaffFragment->setBounds (732, 398, 150, 24);
 
-    _textEditorstaffFragment2.reset (new TextEditor ("staffFragment"));
+    _textEditorstaffFragment2.reset (new juce::TextEditor ("staffFragment"));
     addAndMakeVisible (_textEditorstaffFragment2.get());
     _textEditorstaffFragment2->setMultiLine (false);
     _textEditorstaffFragment2->setReturnKeyStartsNewLine (false);
@@ -169,29 +169,29 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorstaffFragment2->setScrollbarsShown (true);
     _textEditorstaffFragment2->setCaretVisible (true);
     _textEditorstaffFragment2->setPopupMenuEnabled (true);
-    _textEditorstaffFragment2->setText (String());
+    _textEditorstaffFragment2->setText (juce::String());
 
     _textEditorstaffFragment2->setBounds (220, 398, 472, 24);
 
-    _labelstaffFragment.reset (new Label ("staffFragment",
-                                          TRANS("staffFragment")));
+    _labelstaffFragment.reset (new juce::Label ("staffFragment",
+                                                TRANS("staffFragment")));
     addAndMakeVisible (_labelstaffFragment.get());
-    _labelstaffFragment->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    _labelstaffFragment->setJustificationType (Justification::centredLeft);
+    _labelstaffFragment->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _labelstaffFragment->setJustificationType (juce::Justification::centredLeft);
     _labelstaffFragment->setEditable (false, false, false);
-    _labelstaffFragment->setColour (TextEditor::textColourId, Colours::black);
-    _labelstaffFragment->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    _labelstaffFragment->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _labelstaffFragment->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     _labelstaffFragment->setBounds (44, 398, 150, 24);
 
-    _textButtonstaffVetex.reset (new TextButton ("_openstaffVetex"));
+    _textButtonstaffVetex.reset (new juce::TextButton ("_openstaffVetex"));
     addAndMakeVisible (_textButtonstaffVetex.get());
     _textButtonstaffVetex->setButtonText (TRANS("open"));
     _textButtonstaffVetex->addListener (this);
 
     _textButtonstaffVetex->setBounds (737, 457, 150, 24);
 
-    _textEditorstaffVetex.reset (new TextEditor ("staffVetex"));
+    _textEditorstaffVetex.reset (new juce::TextEditor ("staffVetex"));
     addAndMakeVisible (_textEditorstaffVetex.get());
     _textEditorstaffVetex->setMultiLine (false);
     _textEditorstaffVetex->setReturnKeyStartsNewLine (false);
@@ -199,29 +199,29 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorstaffVetex->setScrollbarsShown (true);
     _textEditorstaffVetex->setCaretVisible (true);
     _textEditorstaffVetex->setPopupMenuEnabled (true);
-    _textEditorstaffVetex->setText (String());
+    _textEditorstaffVetex->setText (juce::String());
 
     _textEditorstaffVetex->setBounds (216, 457, 472, 24);
 
-    _labelstaffVetex.reset (new Label ("staffVetex",
-                                       TRANS("staffVetex")));
+    _labelstaffVetex.reset (new juce::Label ("staffVetex",
+                                             TRANS("staffVetex")));
     addAndMakeVisible (_labelstaffVetex.get());
-    _labelstaffVetex->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    _labelstaffVetex->setJustificationType (Justification::centredLeft);
+    _labelstaffVetex->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _labelstaffVetex->setJustificationType (juce::Justification::centredLeft);
     _labelstaffVetex->setEditable (false, false, false);
-    _labelstaffVetex->setColour (TextEditor::textColourId, Colours::black);
-    _labelstaffVetex->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    _labelstaffVetex->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _labelstaffVetex->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     _labelstaffVetex->setBounds (40, 457, 150, 24);
 
-    _textButtonTieFragment2.reset (new TextButton ("_openTieFragment"));
+    _textButtonTieFragment2.reset (new juce::TextButton ("_openTieFragment"));
     addAndMakeVisible (_textButtonTieFragment2.get());
     _textButtonTieFragment2->setButtonText (TRANS("open"));
     _textButtonTieFragment2->addListener (this);
 
     _textButtonTieFragment2->setBounds (728, 606, 150, 24);
 
-    _textEditorTieFragment3.reset (new TextEditor ("TieFragment"));
+    _textEditorTieFragment3.reset (new juce::TextEditor ("TieFragment"));
     addAndMakeVisible (_textEditorTieFragment3.get());
     _textEditorTieFragment3->setMultiLine (false);
     _textEditorTieFragment3->setReturnKeyStartsNewLine (false);
@@ -229,29 +229,29 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorTieFragment3->setScrollbarsShown (true);
     _textEditorTieFragment3->setCaretVisible (true);
     _textEditorTieFragment3->setPopupMenuEnabled (true);
-    _textEditorTieFragment3->setText (String());
+    _textEditorTieFragment3->setText (juce::String());
 
     _textEditorTieFragment3->setBounds (216, 606, 472, 24);
 
-    _labelTieFragment.reset (new Label ("TiefFragment",
-                                        TRANS("TieFragment")));
+    _labelTieFragment.reset (new juce::Label ("TiefFragment",
+                                              TRANS("TieFragment")));
     addAndMakeVisible (_labelTieFragment.get());
-    _labelTieFragment->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    _labelTieFragment->setJustificationType (Justification::centredLeft);
+    _labelTieFragment->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _labelTieFragment->setJustificationType (juce::Justification::centredLeft);
     _labelTieFragment->setEditable (false, false, false);
-    _labelTieFragment->setColour (TextEditor::textColourId, Colours::black);
-    _labelTieFragment->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    _labelTieFragment->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _labelTieFragment->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     _labelTieFragment->setBounds (40, 606, 150, 24);
 
-    _textButtonTieVetex.reset (new TextButton ("_openTieVetex"));
+    _textButtonTieVetex.reset (new juce::TextButton ("_openTieVetex"));
     addAndMakeVisible (_textButtonTieVetex.get());
     _textButtonTieVetex->setButtonText (TRANS("open"));
     _textButtonTieVetex->addListener (this);
 
     _textButtonTieVetex->setBounds (733, 665, 150, 24);
 
-    _textEditorTieVetex.reset (new TextEditor ("TieVetex"));
+    _textEditorTieVetex.reset (new juce::TextEditor ("TieVetex"));
     addAndMakeVisible (_textEditorTieVetex.get());
     _textEditorTieVetex->setMultiLine (false);
     _textEditorTieVetex->setReturnKeyStartsNewLine (false);
@@ -259,33 +259,33 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorTieVetex->setScrollbarsShown (true);
     _textEditorTieVetex->setCaretVisible (true);
     _textEditorTieVetex->setPopupMenuEnabled (true);
-    _textEditorTieVetex->setText (String());
+    _textEditorTieVetex->setText (juce::String());
 
     _textEditorTieVetex->setBounds (212, 665, 472, 24);
 
-    _labelTieVetex2.reset (new Label ("TieVetex",
-                                      TRANS("TieVetex")));
+    _labelTieVetex2.reset (new juce::Label ("TieVetex",
+                                            TRANS("TieVetex")));
     addAndMakeVisible (_labelTieVetex2.get());
-    _labelTieVetex2->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    _labelTieVetex2->setJustificationType (Justification::centredLeft);
+    _labelTieVetex2->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _labelTieVetex2->setJustificationType (juce::Justification::centredLeft);
     _labelTieVetex2->setEditable (false, false, false);
-    _labelTieVetex2->setColour (TextEditor::textColourId, Colours::black);
-    _labelTieVetex2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    _labelTieVetex2->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _labelTieVetex2->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     _labelTieVetex2->setBounds (36, 665, 150, 24);
 
-    _difficulty.reset (new Label ("difficulty",
-                                  TRANS("difficulty\n")));
+    _difficulty.reset (new juce::Label ("difficulty",
+                                        TRANS("difficulty\n")));
     addAndMakeVisible (_difficulty.get());
-    _difficulty->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    _difficulty->setJustificationType (Justification::centredLeft);
+    _difficulty->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _difficulty->setJustificationType (juce::Justification::centredLeft);
     _difficulty->setEditable (false, false, false);
-    _difficulty->setColour (TextEditor::textColourId, Colours::black);
-    _difficulty->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    _difficulty->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _difficulty->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     _difficulty->setBounds (48, 736, 150, 24);
 
-    _textEditorDifficulty.reset (new TextEditor ("textofdifficulty"));
+    _textEditorDifficulty.reset (new juce::TextEditor ("textofdifficulty"));
     addAndMakeVisible (_textEditorDifficulty.get());
     _textEditorDifficulty->setMultiLine (false);
     _textEditorDifficulty->setReturnKeyStartsNewLine (false);
@@ -297,18 +297,18 @@ BinGeneratorComponent::BinGeneratorComponent ()
 
     _textEditorDifficulty->setBounds (208, 736, 160, 24);
 
-    _Type.reset (new Label ("Type",
-                            TRANS("Type")));
+    _Type.reset (new juce::Label ("Type",
+                                  TRANS("Type")));
     addAndMakeVisible (_Type.get());
-    _Type->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    _Type->setJustificationType (Justification::centredLeft);
+    _Type->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _Type->setJustificationType (juce::Justification::centredLeft);
     _Type->setEditable (false, false, false);
-    _Type->setColour (TextEditor::textColourId, Colours::black);
-    _Type->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    _Type->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _Type->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     _Type->setBounds (48, 776, 150, 24);
 
-    _textEditorType.reset (new TextEditor ("textofType"));
+    _textEditorType.reset (new juce::TextEditor ("textofType"));
     addAndMakeVisible (_textEditorType.get());
     _textEditorType->setMultiLine (false);
     _textEditorType->setReturnKeyStartsNewLine (false);
@@ -320,18 +320,18 @@ BinGeneratorComponent::BinGeneratorComponent ()
 
     _textEditorType->setBounds (208, 776, 160, 24);
 
-    _Title.reset (new Label ("Title",
-                             TRANS("Title")));
+    _Title.reset (new juce::Label ("Title",
+                                   TRANS("Title")));
     addAndMakeVisible (_Title.get());
-    _Title->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    _Title->setJustificationType (Justification::centredLeft);
+    _Title->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _Title->setJustificationType (juce::Justification::centredLeft);
     _Title->setEditable (false, false, false);
-    _Title->setColour (TextEditor::textColourId, Colours::black);
-    _Title->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    _Title->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _Title->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     _Title->setBounds (44, 821, 150, 24);
 
-    _textEditorTitle.reset (new TextEditor ("textofTitle"));
+    _textEditorTitle.reset (new juce::TextEditor ("textofTitle"));
     addAndMakeVisible (_textEditorTitle.get());
     _textEditorTitle->setMultiLine (false);
     _textEditorTitle->setReturnKeyStartsNewLine (false);
@@ -343,18 +343,18 @@ BinGeneratorComponent::BinGeneratorComponent ()
 
     _textEditorTitle->setBounds (208, 824, 480, 24);
 
-    _Author.reset (new Label ("Author",
-                              TRANS("Author")));
+    _Author.reset (new juce::Label ("Author",
+                                    TRANS("Author")));
     addAndMakeVisible (_Author.get());
-    _Author->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    _Author->setJustificationType (Justification::centredLeft);
+    _Author->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _Author->setJustificationType (juce::Justification::centredLeft);
     _Author->setEditable (false, false, false);
-    _Author->setColour (TextEditor::textColourId, Colours::black);
-    _Author->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    _Author->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _Author->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     _Author->setBounds (42, 869, 150, 24);
 
-    _textEditorAuthor.reset (new TextEditor ("textofAuthor"));
+    _textEditorAuthor.reset (new juce::TextEditor ("textofAuthor"));
     addAndMakeVisible (_textEditorAuthor.get());
     _textEditorAuthor->setMultiLine (false);
     _textEditorAuthor->setReturnKeyStartsNewLine (false);
@@ -366,18 +366,18 @@ BinGeneratorComponent::BinGeneratorComponent ()
 
     _textEditorAuthor->setBounds (210, 869, 678, 24);
 
-    _Picture.reset (new Label ("Picture",
-                               TRANS("Picture")));
+    _Picture.reset (new juce::Label ("Picture",
+                                     TRANS("Picture")));
     addAndMakeVisible (_Picture.get());
-    _Picture->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    _Picture->setJustificationType (Justification::centredLeft);
+    _Picture->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _Picture->setJustificationType (juce::Justification::centredLeft);
     _Picture->setEditable (false, false, false);
-    _Picture->setColour (TextEditor::textColourId, Colours::black);
-    _Picture->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    _Picture->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _Picture->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     _Picture->setBounds (43, 910, 150, 24);
 
-    _textEditorPicture.reset (new TextEditor ("textofPicture"));
+    _textEditorPicture.reset (new juce::TextEditor ("textofPicture"));
     addAndMakeVisible (_textEditorPicture.get());
     _textEditorPicture->setMultiLine (false);
     _textEditorPicture->setReturnKeyStartsNewLine (false);
@@ -389,7 +389,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
 
     _textEditorPicture->setBounds (211, 910, 677, 24);
 
-    _textButtonGenerator.reset (new TextButton ("Generator"));
+    _textButtonGenerator.reset (new juce::TextButton ("Generator"));
     addAndMakeVisible (_textButtonGenerator.get());
     _textButtonGenerator->addListener (this);
 
@@ -454,12 +454,12 @@ BinGeneratorComponent::~BinGeneratorComponent()
 }
 
 //==============================================================================
-void BinGeneratorComponent::paint (Graphics& g)
+void BinGeneratorComponent::paint (juce::Graphics& g)
 {
     //[UserPrePaint] Add your own custom painting code here..
     //[/UserPrePaint]
 
-    g.fillAll (Colour (0xff323e44));
+    g.fillAll (juce::Colour (0xff323e44));
 
     {
         int x = 996, y = 308, width = 316, height = 276;
@@ -486,7 +486,7 @@ void BinGeneratorComponent::resized()
     //[/UserResized]
 }
 
-void BinGeneratorComponent::buttonClicked (Button* buttonThatWasClicked)
+void BinGeneratorComponent::buttonClicked (juce::Button* buttonThatWasClicked)
 {
     //[UserbuttonClicked_Pre]
     //[/UserbuttonClicked_Pre]
@@ -543,7 +543,7 @@ void BinGeneratorComponent::buttonClicked (Button* buttonThatWasClicked)
 			checkFile(curDir, themePngName, _textEditorPicture);
 
 
-			
+
 
 
 		}

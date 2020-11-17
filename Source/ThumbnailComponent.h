@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.0.4
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -34,12 +34,12 @@
                                                                     //[/Comments]
 */
 class ThumbnailComponent  : public Component,
-                            public Button::Listener
+                            public juce::Button::Listener
 {
 public:
     //==============================================================================
     ThumbnailComponent ();
-    ~ThumbnailComponent();
+    ~ThumbnailComponent() override;
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
@@ -49,9 +49,9 @@ public:
 	}
     //[/UserMethods]
 
-    void paint (Graphics& g) override;
+    void paint (juce::Graphics& g) override;
     void resized() override;
-    void buttonClicked (Button* buttonThatWasClicked) override;
+    void buttonClicked (juce::Button* buttonThatWasClicked) override;
 
 
 
@@ -61,7 +61,7 @@ private:
 
     //==============================================================================
     std::unique_ptr<DrawableButton> _btnThumbnail;
-    std::unique_ptr<ImageButton> _thumbnailImageButton;
+    std::unique_ptr<juce::ImageButton> _thumbnailImageButton;
 
 
     //==============================================================================

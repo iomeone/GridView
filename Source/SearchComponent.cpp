@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.0.4
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -33,7 +33,7 @@ SearchComponent::SearchComponent ()
     //[Constructor_pre] You can add your own custom stuff here..
     //[/Constructor_pre]
 
-    textEditor.reset (new TextEditor ("new text editor"));
+    textEditor.reset (new juce::TextEditor ("new text editor"));
     addAndMakeVisible (textEditor.get());
     textEditor->setMultiLine (false);
     textEditor->setReturnKeyStartsNewLine (false);
@@ -41,9 +41,9 @@ SearchComponent::SearchComponent ()
     textEditor->setScrollbarsShown (false);
     textEditor->setCaretVisible (true);
     textEditor->setPopupMenuEnabled (true);
-    textEditor->setColour (TextEditor::backgroundColourId, Colour (0x40565849));
-    textEditor->setColour (TextEditor::outlineColourId, Colour (0x00992020));
-    textEditor->setText (String());
+    textEditor->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x40565849));
+    textEditor->setColour (juce::TextEditor::outlineColourId, juce::Colour (0x00992020));
+    textEditor->setText (juce::String());
 
     _btnSearch.reset (new DrawableButton ("searchButton", DrawableButton::ImageFitted));
     addAndMakeVisible (_btnSearch.get());
@@ -102,14 +102,14 @@ SearchComponent::~SearchComponent()
 }
 
 //==============================================================================
-void SearchComponent::paint (Graphics& g)
+void SearchComponent::paint (juce::Graphics& g)
 {
     //[UserPrePaint] Add your own custom painting code here..
     //[/UserPrePaint]
 
     {
         float x = 2.0f, y = 2.0f, width = static_cast<float> (getWidth() - 4), height = static_cast<float> (getHeight() - 4);
-        Colour strokeColour = Colours::aliceblue;
+        juce::Colour strokeColour = juce::Colours::aliceblue;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (strokeColour);

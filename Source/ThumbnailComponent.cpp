@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.0.4
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -37,15 +37,15 @@ ThumbnailComponent::ThumbnailComponent ()
     addAndMakeVisible (_btnThumbnail.get());
     _btnThumbnail->setName ("ThumbnailButton");
 
-    _thumbnailImageButton.reset (new ImageButton ("ThumbnailImageButton"));
+    _thumbnailImageButton.reset (new juce::ImageButton ("ThumbnailImageButton"));
     addAndMakeVisible (_thumbnailImageButton.get());
     _thumbnailImageButton->setButtonText (TRANS("new button"));
     _thumbnailImageButton->addListener (this);
 
     _thumbnailImageButton->setImages (false, true, true,
-                                      Image(), 1.000f, Colour (0x00000000),
-                                      Image(), 1.000f, Colour (0x00000000),
-                                      Image(), 1.000f, Colour (0x00000000));
+                                      juce::Image(), 1.000f, juce::Colour (0x00000000),
+                                      juce::Image(), 1.000f, juce::Colour (0x00000000),
+                                      juce::Image(), 1.000f, juce::Colour (0x00000000));
 
     //[UserPreSize]
 
@@ -96,12 +96,12 @@ ThumbnailComponent::~ThumbnailComponent()
 }
 
 //==============================================================================
-void ThumbnailComponent::paint (Graphics& g)
+void ThumbnailComponent::paint (juce::Graphics& g)
 {
     //[UserPrePaint] Add your own custom painting code here..
     //[/UserPrePaint]
 
-    g.fillAll (Colours::burlywood);
+    g.fillAll (juce::Colours::burlywood);
 
     //[UserPaint] Add your own custom painting code here..
     //[/UserPaint]
@@ -118,7 +118,7 @@ void ThumbnailComponent::resized()
     //[/UserResized]
 }
 
-void ThumbnailComponent::buttonClicked (Button* buttonThatWasClicked)
+void ThumbnailComponent::buttonClicked (juce::Button* buttonThatWasClicked)
 {
     //[UserbuttonClicked_Pre]
     //[/UserbuttonClicked_Pre]

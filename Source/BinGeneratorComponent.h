@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.0.4
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -34,12 +34,12 @@
                                                                     //[/Comments]
 */
 class BinGeneratorComponent  : public DocumentWindow,
-                               public Button::Listener
+                               public juce::Button::Listener
 {
 public:
     //==============================================================================
     BinGeneratorComponent ();
-    ~BinGeneratorComponent();
+    ~BinGeneratorComponent() override;
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
@@ -66,9 +66,9 @@ public:
 
     //[/UserMethods]
 
-    void paint (Graphics& g) override;
+    void paint (juce::Graphics& g) override;
     void resized() override;
-    void buttonClicked (Button* buttonThatWasClicked) override;
+    void buttonClicked (juce::Button* buttonThatWasClicked) override;
 
 
 
@@ -80,41 +80,41 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    std::unique_ptr<Label> _labelTexturePng;
-    std::unique_ptr<TextEditor> _textEditorTexturePng;
-    std::unique_ptr<TextButton> _textButtonTexturePng;
-    std::unique_ptr<TextButton> _textButtonxmlSheet;
-    std::unique_ptr<TextEditor> _textEditorxmlSheet;
-    std::unique_ptr<Label> _labelXmlSheet;
-    std::unique_ptr<TextButton> _textButtonParticleFragment;
-    std::unique_ptr<TextEditor> _textEditorParticleFragment;
-    std::unique_ptr<Label> _labelParticleFragment;
-    std::unique_ptr<TextButton> _textButtonParticleVetex;
-    std::unique_ptr<TextEditor> _textEditorParticleVetex;
-    std::unique_ptr<Label> _labelParticleVetex;
-    std::unique_ptr<TextButton> _textButtonstaffFragment;
-    std::unique_ptr<TextEditor> _textEditorstaffFragment2;
-    std::unique_ptr<Label> _labelstaffFragment;
-    std::unique_ptr<TextButton> _textButtonstaffVetex;
-    std::unique_ptr<TextEditor> _textEditorstaffVetex;
-    std::unique_ptr<Label> _labelstaffVetex;
-    std::unique_ptr<TextButton> _textButtonTieFragment2;
-    std::unique_ptr<TextEditor> _textEditorTieFragment3;
-    std::unique_ptr<Label> _labelTieFragment;
-    std::unique_ptr<TextButton> _textButtonTieVetex;
-    std::unique_ptr<TextEditor> _textEditorTieVetex;
-    std::unique_ptr<Label> _labelTieVetex2;
-    std::unique_ptr<Label> _difficulty;
-    std::unique_ptr<TextEditor> _textEditorDifficulty;
-    std::unique_ptr<Label> _Type;
-    std::unique_ptr<TextEditor> _textEditorType;
-    std::unique_ptr<Label> _Title;
-    std::unique_ptr<TextEditor> _textEditorTitle;
-    std::unique_ptr<Label> _Author;
-    std::unique_ptr<TextEditor> _textEditorAuthor;
-    std::unique_ptr<Label> _Picture;
-    std::unique_ptr<TextEditor> _textEditorPicture;
-    std::unique_ptr<TextButton> _textButtonGenerator;
+    std::unique_ptr<juce::Label> _labelTexturePng;
+    std::unique_ptr<juce::TextEditor> _textEditorTexturePng;
+    std::unique_ptr<juce::TextButton> _textButtonTexturePng;
+    std::unique_ptr<juce::TextButton> _textButtonxmlSheet;
+    std::unique_ptr<juce::TextEditor> _textEditorxmlSheet;
+    std::unique_ptr<juce::Label> _labelXmlSheet;
+    std::unique_ptr<juce::TextButton> _textButtonParticleFragment;
+    std::unique_ptr<juce::TextEditor> _textEditorParticleFragment;
+    std::unique_ptr<juce::Label> _labelParticleFragment;
+    std::unique_ptr<juce::TextButton> _textButtonParticleVetex;
+    std::unique_ptr<juce::TextEditor> _textEditorParticleVetex;
+    std::unique_ptr<juce::Label> _labelParticleVetex;
+    std::unique_ptr<juce::TextButton> _textButtonstaffFragment;
+    std::unique_ptr<juce::TextEditor> _textEditorstaffFragment2;
+    std::unique_ptr<juce::Label> _labelstaffFragment;
+    std::unique_ptr<juce::TextButton> _textButtonstaffVetex;
+    std::unique_ptr<juce::TextEditor> _textEditorstaffVetex;
+    std::unique_ptr<juce::Label> _labelstaffVetex;
+    std::unique_ptr<juce::TextButton> _textButtonTieFragment2;
+    std::unique_ptr<juce::TextEditor> _textEditorTieFragment3;
+    std::unique_ptr<juce::Label> _labelTieFragment;
+    std::unique_ptr<juce::TextButton> _textButtonTieVetex;
+    std::unique_ptr<juce::TextEditor> _textEditorTieVetex;
+    std::unique_ptr<juce::Label> _labelTieVetex2;
+    std::unique_ptr<juce::Label> _difficulty;
+    std::unique_ptr<juce::TextEditor> _textEditorDifficulty;
+    std::unique_ptr<juce::Label> _Type;
+    std::unique_ptr<juce::TextEditor> _textEditorType;
+    std::unique_ptr<juce::Label> _Title;
+    std::unique_ptr<juce::TextEditor> _textEditorTitle;
+    std::unique_ptr<juce::Label> _Author;
+    std::unique_ptr<juce::TextEditor> _textEditorAuthor;
+    std::unique_ptr<juce::Label> _Picture;
+    std::unique_ptr<juce::TextEditor> _textEditorPicture;
+    std::unique_ptr<juce::TextButton> _textButtonGenerator;
 
 
     //==============================================================================

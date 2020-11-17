@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.0.4
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -43,14 +43,14 @@ class ContentComponent  : public Component
 public:
     //==============================================================================
     ContentComponent ();
-    ~ContentComponent();
+    ~ContentComponent() override;
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
 	int getIdealHeight();
     //[/UserMethods]
 
-    void paint (Graphics& g) override;
+    void paint (juce::Graphics& g) override;
     void resized() override;
 
     // Binary resources:
