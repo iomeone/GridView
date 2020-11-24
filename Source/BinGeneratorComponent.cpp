@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 6.0.4
+  Created with Projucer version: 6.0.3
 
   ------------------------------------------------------------------------------
 
@@ -62,14 +62,14 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textButtonTexturePng->setButtonText (TRANS("open"));
     _textButtonTexturePng->addListener (this);
 
-    _textButtonTexturePng->setBounds (728, 152, 150, 24);
+    _textButtonTexturePng->setBounds (740, 152, 150, 24);
 
     _textButtonxmlSheet.reset (new juce::TextButton ("_openxmlSheet"));
     addAndMakeVisible (_textButtonxmlSheet.get());
     _textButtonxmlSheet->setButtonText (TRANS("open"));
     _textButtonxmlSheet->addListener (this);
 
-    _textButtonxmlSheet->setBounds (728, 80, 150, 24);
+    _textButtonxmlSheet->setBounds (740, 80, 150, 24);
 
     _textEditorxmlSheet.reset (new juce::TextEditor ("xmlSheet"));
     addAndMakeVisible (_textEditorxmlSheet.get());
@@ -99,7 +99,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textButtonParticleFragment->setButtonText (TRANS("open"));
     _textButtonParticleFragment->addListener (this);
 
-    _textButtonParticleFragment->setBounds (732, 205, 150, 24);
+    _textButtonParticleFragment->setBounds (740, 205, 150, 24);
 
     _textEditorParticleFragment.reset (new juce::TextEditor ("ParticleFragment"));
     addAndMakeVisible (_textEditorParticleFragment.get());
@@ -122,14 +122,14 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _labelParticleFragment->setColour (juce::TextEditor::textColourId, juce::Colours::black);
     _labelParticleFragment->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
-    _labelParticleFragment->setBounds (44, 205, 150, 24);
+    _labelParticleFragment->setBounds (40, 205, 150, 24);
 
     _textButtonParticleVetex.reset (new juce::TextButton ("_openParticleVetex"));
     addAndMakeVisible (_textButtonParticleVetex.get());
     _textButtonParticleVetex->setButtonText (TRANS("open"));
     _textButtonParticleVetex->addListener (this);
 
-    _textButtonParticleVetex->setBounds (737, 264, 150, 24);
+    _textButtonParticleVetex->setBounds (740, 248, 150, 24);
 
     _textEditorParticleVetex.reset (new juce::TextEditor ("ParticleVetex"));
     addAndMakeVisible (_textEditorParticleVetex.get());
@@ -141,7 +141,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorParticleVetex->setPopupMenuEnabled (true);
     _textEditorParticleVetex->setText (juce::String());
 
-    _textEditorParticleVetex->setBounds (216, 264, 472, 24);
+    _textEditorParticleVetex->setBounds (224, 248, 472, 24);
 
     _labelParticleVetex.reset (new juce::Label ("ParticleVetex",
                                                 TRANS("ParticleVetex")));
@@ -152,14 +152,14 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _labelParticleVetex->setColour (juce::TextEditor::textColourId, juce::Colours::black);
     _labelParticleVetex->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
-    _labelParticleVetex->setBounds (40, 264, 150, 24);
+    _labelParticleVetex->setBounds (40, 248, 150, 24);
 
     _textButtonstaffFragment.reset (new juce::TextButton ("_openstaffFragment"));
     addAndMakeVisible (_textButtonstaffFragment.get());
     _textButtonstaffFragment->setButtonText (TRANS("open"));
     _textButtonstaffFragment->addListener (this);
 
-    _textButtonstaffFragment->setBounds (732, 398, 150, 24);
+    _textButtonstaffFragment->setBounds (740, 312, 150, 24);
 
     _textEditorstaffFragment2.reset (new juce::TextEditor ("staffFragment"));
     addAndMakeVisible (_textEditorstaffFragment2.get());
@@ -171,7 +171,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorstaffFragment2->setPopupMenuEnabled (true);
     _textEditorstaffFragment2->setText (juce::String());
 
-    _textEditorstaffFragment2->setBounds (220, 398, 472, 24);
+    _textEditorstaffFragment2->setBounds (220, 310, 472, 24);
 
     _labelstaffFragment.reset (new juce::Label ("staffFragment",
                                                 TRANS("staffFragment")));
@@ -182,14 +182,14 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _labelstaffFragment->setColour (juce::TextEditor::textColourId, juce::Colours::black);
     _labelstaffFragment->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
-    _labelstaffFragment->setBounds (44, 398, 150, 24);
+    _labelstaffFragment->setBounds (40, 310, 150, 24);
 
     _textButtonstaffVetex.reset (new juce::TextButton ("_openstaffVetex"));
     addAndMakeVisible (_textButtonstaffVetex.get());
     _textButtonstaffVetex->setButtonText (TRANS("open"));
     _textButtonstaffVetex->addListener (this);
 
-    _textButtonstaffVetex->setBounds (737, 457, 150, 24);
+    _textButtonstaffVetex->setBounds (740, 352, 150, 24);
 
     _textEditorstaffVetex.reset (new juce::TextEditor ("staffVetex"));
     addAndMakeVisible (_textEditorstaffVetex.get());
@@ -201,7 +201,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorstaffVetex->setPopupMenuEnabled (true);
     _textEditorstaffVetex->setText (juce::String());
 
-    _textEditorstaffVetex->setBounds (216, 457, 472, 24);
+    _textEditorstaffVetex->setBounds (224, 353, 472, 24);
 
     _labelstaffVetex.reset (new juce::Label ("staffVetex",
                                              TRANS("staffVetex")));
@@ -212,14 +212,14 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _labelstaffVetex->setColour (juce::TextEditor::textColourId, juce::Colours::black);
     _labelstaffVetex->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
-    _labelstaffVetex->setBounds (40, 457, 150, 24);
+    _labelstaffVetex->setBounds (40, 353, 150, 24);
 
     _textButtonTieFragment2.reset (new juce::TextButton ("_openTieFragment"));
     addAndMakeVisible (_textButtonTieFragment2.get());
     _textButtonTieFragment2->setButtonText (TRANS("open"));
     _textButtonTieFragment2->addListener (this);
 
-    _textButtonTieFragment2->setBounds (728, 606, 150, 24);
+    _textButtonTieFragment2->setBounds (740, 408, 150, 24);
 
     _textEditorTieFragment3.reset (new juce::TextEditor ("TieFragment"));
     addAndMakeVisible (_textEditorTieFragment3.get());
@@ -231,7 +231,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorTieFragment3->setPopupMenuEnabled (true);
     _textEditorTieFragment3->setText (juce::String());
 
-    _textEditorTieFragment3->setBounds (216, 606, 472, 24);
+    _textEditorTieFragment3->setBounds (224, 406, 472, 24);
 
     _labelTieFragment.reset (new juce::Label ("TiefFragment",
                                               TRANS("TieFragment")));
@@ -242,14 +242,14 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _labelTieFragment->setColour (juce::TextEditor::textColourId, juce::Colours::black);
     _labelTieFragment->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
-    _labelTieFragment->setBounds (40, 606, 150, 24);
+    _labelTieFragment->setBounds (40, 406, 150, 24);
 
     _textButtonTieVetex.reset (new juce::TextButton ("_openTieVetex"));
     addAndMakeVisible (_textButtonTieVetex.get());
     _textButtonTieVetex->setButtonText (TRANS("open"));
     _textButtonTieVetex->addListener (this);
 
-    _textButtonTieVetex->setBounds (733, 665, 150, 24);
+    _textButtonTieVetex->setBounds (740, 465, 150, 24);
 
     _textEditorTieVetex.reset (new juce::TextEditor ("TieVetex"));
     addAndMakeVisible (_textEditorTieVetex.get());
@@ -261,7 +261,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorTieVetex->setPopupMenuEnabled (true);
     _textEditorTieVetex->setText (juce::String());
 
-    _textEditorTieVetex->setBounds (212, 665, 472, 24);
+    _textEditorTieVetex->setBounds (220, 465, 472, 24);
 
     _labelTieVetex2.reset (new juce::Label ("TieVetex",
                                             TRANS("TieVetex")));
@@ -272,7 +272,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _labelTieVetex2->setColour (juce::TextEditor::textColourId, juce::Colours::black);
     _labelTieVetex2->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
-    _labelTieVetex2->setBounds (36, 665, 150, 24);
+    _labelTieVetex2->setBounds (40, 465, 150, 24);
 
     _difficulty.reset (new juce::Label ("difficulty",
                                         TRANS("difficulty\n")));
@@ -395,6 +395,52 @@ BinGeneratorComponent::BinGeneratorComponent ()
 
     _textButtonGenerator->setBounds (1080, 920, 150, 24);
 
+    juce__label.reset (new juce::Label ("new label",
+                                        TRANS("TimeQuardFragment\n")));
+    addAndMakeVisible (juce__label.get());
+    juce__label->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    juce__label->setJustificationType (juce::Justification::centredLeft);
+    juce__label->setEditable (false, false, false);
+    juce__label->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    juce__label->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
+
+    juce__label->setBounds (40, 528, 150, 24);
+
+    juce__label2.reset (new juce::Label ("new label",
+                                         TRANS("TimeQuardVetex")));
+    addAndMakeVisible (juce__label2.get());
+    juce__label2->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    juce__label2->setJustificationType (juce::Justification::centredLeft);
+    juce__label2->setEditable (false, false, false);
+    juce__label2->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    juce__label2->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
+
+    juce__label2->setBounds (40, 584, 150, 24);
+
+    _textEditorTimeFrag.reset (new juce::TextEditor ("new text editor"));
+    addAndMakeVisible (_textEditorTimeFrag.get());
+    _textEditorTimeFrag->setMultiLine (false);
+    _textEditorTimeFrag->setReturnKeyStartsNewLine (false);
+    _textEditorTimeFrag->setReadOnly (false);
+    _textEditorTimeFrag->setScrollbarsShown (true);
+    _textEditorTimeFrag->setCaretVisible (true);
+    _textEditorTimeFrag->setPopupMenuEnabled (true);
+    _textEditorTimeFrag->setText (juce::String());
+
+    _textEditorTimeFrag->setBounds (224, 528, 464, 24);
+
+    _textEditorTimeVetex.reset (new juce::TextEditor ("new text editor"));
+    addAndMakeVisible (_textEditorTimeVetex.get());
+    _textEditorTimeVetex->setMultiLine (false);
+    _textEditorTimeVetex->setReturnKeyStartsNewLine (false);
+    _textEditorTimeVetex->setReadOnly (false);
+    _textEditorTimeVetex->setScrollbarsShown (true);
+    _textEditorTimeVetex->setCaretVisible (true);
+    _textEditorTimeVetex->setPopupMenuEnabled (true);
+    _textEditorTimeVetex->setText (juce::String());
+
+    _textEditorTimeVetex->setBounds (224, 592, 464, 24);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -447,6 +493,10 @@ BinGeneratorComponent::~BinGeneratorComponent()
     _Picture = nullptr;
     _textEditorPicture = nullptr;
     _textButtonGenerator = nullptr;
+    juce__label = nullptr;
+    juce__label2 = nullptr;
+    _textEditorTimeFrag = nullptr;
+    _textEditorTimeVetex = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -538,6 +588,10 @@ void BinGeneratorComponent::buttonClicked (juce::Button* buttonThatWasClicked)
 
 			checkFile(curDir, "fTie.txt", _textEditorTieFragment3);
 			checkFile(curDir, "vTie.txt", _textEditorTieVetex);
+
+
+			checkFile(curDir, "fTime.txt", _textEditorTimeFrag);
+			checkFile(curDir, "vTime.txt", _textEditorTimeVetex);
 
 			String themePngName = fileName + "theme.jpg";
 			checkFile(curDir, themePngName, _textEditorPicture);
@@ -658,6 +712,18 @@ void BinGeneratorComponent::buttonClicked (juce::Button* buttonThatWasClicked)
 			sheetBin.setProperty("vetexIndicator", fpFile.loadFileAsString(), nullptr);
 		}
 
+
+		{
+			juce::File fpFile = curDir.getChildFile("fTime.txt");
+			sheetBin.setProperty("fTimeQuard", fpFile.loadFileAsString(), nullptr);
+		}
+		{
+			juce::File fpFile = curDir.getChildFile("vTime.txt");
+			sheetBin.setProperty("vTimeQuard", fpFile.loadFileAsString(), nullptr); 
+		}
+
+
+
 		sheetBin.setProperty("title", _textEditorTitle->getText(), nullptr);
 
 
@@ -721,10 +787,10 @@ BEGIN_JUCER_METADATA
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
   <TEXTBUTTON name="_openTexturePng" id="60b09a8dcd1deaf6" memberName="_textButtonTexturePng"
-              virtualName="" explicitFocusOrder="0" pos="728 152 150 24" buttonText="open"
+              virtualName="" explicitFocusOrder="0" pos="740 152 150 24" buttonText="open"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="_openxmlSheet" id="107f1754d581f00e" memberName="_textButtonxmlSheet"
-              virtualName="" explicitFocusOrder="0" pos="728 80 150 24" buttonText="open"
+              virtualName="" explicitFocusOrder="0" pos="740 80 150 24" buttonText="open"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTEDITOR name="xmlSheet" id="1095a4a1e3f3cb21" memberName="_textEditorxmlSheet"
               virtualName="" explicitFocusOrder="0" pos="216 80 472 24" initialText=""
@@ -736,74 +802,74 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="_openParticleFragment" id="63d8fd3e8952293" memberName="_textButtonParticleFragment"
-              virtualName="" explicitFocusOrder="0" pos="732 205 150 24" buttonText="open"
+              virtualName="" explicitFocusOrder="0" pos="740 205 150 24" buttonText="open"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTEDITOR name="ParticleFragment" id="59b14c8ae5fda44e" memberName="_textEditorParticleFragment"
               virtualName="" explicitFocusOrder="0" pos="216 200 472 24" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
   <LABEL name="ParticleFragment" id="ce839e0227766d97" memberName="_labelParticleFragment"
-         virtualName="" explicitFocusOrder="0" pos="44 205 150 24" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="40 205 150 24" edTextCol="ff000000"
          edBkgCol="0" labelText="ParticleFragment" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="_openParticleVetex" id="27680997b515b97f" memberName="_textButtonParticleVetex"
-              virtualName="" explicitFocusOrder="0" pos="737 264 150 24" buttonText="open"
+              virtualName="" explicitFocusOrder="0" pos="740 248 150 24" buttonText="open"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTEDITOR name="ParticleVetex" id="7d6ed9ebe0c6a94e" memberName="_textEditorParticleVetex"
-              virtualName="" explicitFocusOrder="0" pos="216 264 472 24" initialText=""
+              virtualName="" explicitFocusOrder="0" pos="224 248 472 24" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
   <LABEL name="ParticleVetex" id="bd0c1bbbf0971c22" memberName="_labelParticleVetex"
-         virtualName="" explicitFocusOrder="0" pos="40 264 150 24" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="40 248 150 24" edTextCol="ff000000"
          edBkgCol="0" labelText="ParticleVetex" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="_openstaffFragment" id="fdbb90a7e463f5c2" memberName="_textButtonstaffFragment"
-              virtualName="" explicitFocusOrder="0" pos="732 398 150 24" buttonText="open"
+              virtualName="" explicitFocusOrder="0" pos="740 312 150 24" buttonText="open"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTEDITOR name="staffFragment" id="89d6efd204450ea0" memberName="_textEditorstaffFragment2"
-              virtualName="" explicitFocusOrder="0" pos="220 398 472 24" initialText=""
+              virtualName="" explicitFocusOrder="0" pos="220 310 472 24" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
   <LABEL name="staffFragment" id="f6d4e2dbf5a84c10" memberName="_labelstaffFragment"
-         virtualName="" explicitFocusOrder="0" pos="44 398 150 24" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="40 310 150 24" edTextCol="ff000000"
          edBkgCol="0" labelText="staffFragment" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="_openstaffVetex" id="2293d53ddcdc496" memberName="_textButtonstaffVetex"
-              virtualName="" explicitFocusOrder="0" pos="737 457 150 24" buttonText="open"
+              virtualName="" explicitFocusOrder="0" pos="740 352 150 24" buttonText="open"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTEDITOR name="staffVetex" id="8a3fc2adfb5d8e77" memberName="_textEditorstaffVetex"
-              virtualName="" explicitFocusOrder="0" pos="216 457 472 24" initialText=""
+              virtualName="" explicitFocusOrder="0" pos="224 353 472 24" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
   <LABEL name="staffVetex" id="9e9223961494bdf8" memberName="_labelstaffVetex"
-         virtualName="" explicitFocusOrder="0" pos="40 457 150 24" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="40 353 150 24" edTextCol="ff000000"
          edBkgCol="0" labelText="staffVetex" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="_openTieFragment" id="75ee31e2d4714000" memberName="_textButtonTieFragment2"
-              virtualName="" explicitFocusOrder="0" pos="728 606 150 24" buttonText="open"
+              virtualName="" explicitFocusOrder="0" pos="740 408 150 24" buttonText="open"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTEDITOR name="TieFragment" id="22882ca1c86950d" memberName="_textEditorTieFragment3"
-              virtualName="" explicitFocusOrder="0" pos="216 606 472 24" initialText=""
+              virtualName="" explicitFocusOrder="0" pos="224 406 472 24" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
   <LABEL name="TiefFragment" id="5753dea5002b258b" memberName="_labelTieFragment"
-         virtualName="" explicitFocusOrder="0" pos="40 606 150 24" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="40 406 150 24" edTextCol="ff000000"
          edBkgCol="0" labelText="TieFragment" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="_openTieVetex" id="aa57d4730aee5fe3" memberName="_textButtonTieVetex"
-              virtualName="" explicitFocusOrder="0" pos="733 665 150 24" buttonText="open"
+              virtualName="" explicitFocusOrder="0" pos="740 465 150 24" buttonText="open"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTEDITOR name="TieVetex" id="fb24e9bc42dace0e" memberName="_textEditorTieVetex"
-              virtualName="" explicitFocusOrder="0" pos="212 665 472 24" initialText=""
+              virtualName="" explicitFocusOrder="0" pos="220 465 472 24" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
   <LABEL name="TieVetex" id="42bbac015cf07f06" memberName="_labelTieVetex2"
-         virtualName="" explicitFocusOrder="0" pos="36 665 150 24" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="40 465 150 24" edTextCol="ff000000"
          edBkgCol="0" labelText="TieVetex" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
@@ -855,6 +921,24 @@ BEGIN_JUCER_METADATA
   <TEXTBUTTON name="Generator" id="3c6a35835a1409ff" memberName="_textButtonGenerator"
               virtualName="" explicitFocusOrder="0" pos="1080 920 150 24" buttonText="Generator"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="new label" id="da775e71f549b583" memberName="juce__label"
+         virtualName="" explicitFocusOrder="0" pos="40 528 150 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="TimeQuardFragment&#10;" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
+         fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
+  <LABEL name="new label" id="737d10b40e887cc4" memberName="juce__label2"
+         virtualName="" explicitFocusOrder="0" pos="40 584 150 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="TimeQuardVetex" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
+         fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
+  <TEXTEDITOR name="new text editor" id="be45388e233227e0" memberName="_textEditorTimeFrag"
+              virtualName="" explicitFocusOrder="0" pos="224 528 464 24" initialText=""
+              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
+              caret="1" popupmenu="1"/>
+  <TEXTEDITOR name="new text editor" id="97f8435b0fb4ea8d" memberName="_textEditorTimeVetex"
+              virtualName="" explicitFocusOrder="0" pos="224 592 464 24" initialText=""
+              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
+              caret="1" popupmenu="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

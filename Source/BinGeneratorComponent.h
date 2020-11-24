@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 6.0.4
+  Created with Projucer version: 6.0.3
 
   ------------------------------------------------------------------------------
 
@@ -115,6 +115,10 @@ private:
     std::unique_ptr<juce::Label> _Picture;
     std::unique_ptr<juce::TextEditor> _textEditorPicture;
     std::unique_ptr<juce::TextButton> _textButtonGenerator;
+    std::unique_ptr<juce::Label> juce__label;
+    std::unique_ptr<juce::Label> juce__label2;
+    std::unique_ptr<juce::TextEditor> _textEditorTimeFrag;
+    std::unique_ptr<juce::TextEditor> _textEditorTimeVetex;
 
 
     //==============================================================================
