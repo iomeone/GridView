@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 6.0.3
+  Created with Projucer version: 6.0.4
 
   ------------------------------------------------------------------------------
 
@@ -404,7 +404,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
     juce__label->setColour (juce::TextEditor::textColourId, juce::Colours::black);
     juce__label->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
-    juce__label->setBounds (40, 528, 150, 24);
+    juce__label->setBounds (40, 512, 150, 24);
 
     juce__label2.reset (new juce::Label ("new label",
                                          TRANS("TimeQuardVetex")));
@@ -415,7 +415,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
     juce__label2->setColour (juce::TextEditor::textColourId, juce::Colours::black);
     juce__label2->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
-    juce__label2->setBounds (40, 584, 150, 24);
+    juce__label2->setBounds (40, 552, 150, 24);
 
     _textEditorTimeFrag.reset (new juce::TextEditor ("new text editor"));
     addAndMakeVisible (_textEditorTimeFrag.get());
@@ -427,7 +427,7 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorTimeFrag->setPopupMenuEnabled (true);
     _textEditorTimeFrag->setText (juce::String());
 
-    _textEditorTimeFrag->setBounds (224, 528, 464, 24);
+    _textEditorTimeFrag->setBounds (224, 512, 464, 24);
 
     _textEditorTimeVetex.reset (new juce::TextEditor ("new text editor"));
     addAndMakeVisible (_textEditorTimeVetex.get());
@@ -439,7 +439,53 @@ BinGeneratorComponent::BinGeneratorComponent ()
     _textEditorTimeVetex->setPopupMenuEnabled (true);
     _textEditorTimeVetex->setText (juce::String());
 
-    _textEditorTimeVetex->setBounds (224, 592, 464, 24);
+    _textEditorTimeVetex->setBounds (224, 552, 464, 24);
+
+    juce__label3.reset (new juce::Label ("new label",
+                                         TRANS("BackGroundFragment")));
+    addAndMakeVisible (juce__label3.get());
+    juce__label3->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    juce__label3->setJustificationType (juce::Justification::centredLeft);
+    juce__label3->setEditable (false, false, false);
+    juce__label3->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    juce__label3->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
+
+    juce__label3->setBounds (40, 600, 150, 24);
+
+    juce__label4.reset (new juce::Label ("new label",
+                                         TRANS("BackGroundVetex")));
+    addAndMakeVisible (juce__label4.get());
+    juce__label4->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    juce__label4->setJustificationType (juce::Justification::centredLeft);
+    juce__label4->setEditable (false, false, false);
+    juce__label4->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    juce__label4->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
+
+    juce__label4->setBounds (40, 648, 150, 24);
+
+    _textEditorBackGroundFragment.reset (new juce::TextEditor ("new text editor"));
+    addAndMakeVisible (_textEditorBackGroundFragment.get());
+    _textEditorBackGroundFragment->setMultiLine (false);
+    _textEditorBackGroundFragment->setReturnKeyStartsNewLine (false);
+    _textEditorBackGroundFragment->setReadOnly (false);
+    _textEditorBackGroundFragment->setScrollbarsShown (true);
+    _textEditorBackGroundFragment->setCaretVisible (true);
+    _textEditorBackGroundFragment->setPopupMenuEnabled (true);
+    _textEditorBackGroundFragment->setText (juce::String());
+
+    _textEditorBackGroundFragment->setBounds (224, 608, 464, 24);
+
+    _textEditorBackGroundVetex.reset (new juce::TextEditor ("new text editor"));
+    addAndMakeVisible (_textEditorBackGroundVetex.get());
+    _textEditorBackGroundVetex->setMultiLine (false);
+    _textEditorBackGroundVetex->setReturnKeyStartsNewLine (false);
+    _textEditorBackGroundVetex->setReadOnly (false);
+    _textEditorBackGroundVetex->setScrollbarsShown (true);
+    _textEditorBackGroundVetex->setCaretVisible (true);
+    _textEditorBackGroundVetex->setPopupMenuEnabled (true);
+    _textEditorBackGroundVetex->setText (juce::String());
+
+    _textEditorBackGroundVetex->setBounds (224, 656, 464, 24);
 
 
     //[UserPreSize]
@@ -497,6 +543,10 @@ BinGeneratorComponent::~BinGeneratorComponent()
     juce__label2 = nullptr;
     _textEditorTimeFrag = nullptr;
     _textEditorTimeVetex = nullptr;
+    juce__label3 = nullptr;
+    juce__label4 = nullptr;
+    _textEditorBackGroundFragment = nullptr;
+    _textEditorBackGroundVetex = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -592,6 +642,9 @@ void BinGeneratorComponent::buttonClicked (juce::Button* buttonThatWasClicked)
 
 			checkFile(curDir, "fTime.txt", _textEditorTimeFrag);
 			checkFile(curDir, "vTime.txt", _textEditorTimeVetex);
+
+			checkFile(curDir, "fBackground.txt", _textEditorBackGroundFragment);
+			checkFile(curDir, "vBackground.txt", _textEditorBackGroundVetex);
 
 			String themePngName = fileName + "theme.jpg";
 			checkFile(curDir, themePngName, _textEditorPicture);
@@ -719,7 +772,18 @@ void BinGeneratorComponent::buttonClicked (juce::Button* buttonThatWasClicked)
 		}
 		{
 			juce::File fpFile = curDir.getChildFile("vTime.txt");
-			sheetBin.setProperty("vTimeQuard", fpFile.loadFileAsString(), nullptr); 
+			sheetBin.setProperty("vTimeQuard", fpFile.loadFileAsString(), nullptr);
+		}
+
+
+
+		{
+			juce::File fpFile = curDir.getChildFile("fBackground.txt");
+			sheetBin.setProperty("fBackground", fpFile.loadFileAsString(), nullptr);
+		}
+		{
+			juce::File fpFile = curDir.getChildFile("vBackground.txt");
+			sheetBin.setProperty("vBackground", fpFile.loadFileAsString(), nullptr);
 		}
 
 
@@ -922,21 +986,39 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="1080 920 150 24" buttonText="Generator"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <LABEL name="new label" id="da775e71f549b583" memberName="juce__label"
-         virtualName="" explicitFocusOrder="0" pos="40 528 150 24" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="40 512 150 24" edTextCol="ff000000"
          edBkgCol="0" labelText="TimeQuardFragment&#10;" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="new label" id="737d10b40e887cc4" memberName="juce__label2"
-         virtualName="" explicitFocusOrder="0" pos="40 584 150 24" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="40 552 150 24" edTextCol="ff000000"
          edBkgCol="0" labelText="TimeQuardVetex" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <TEXTEDITOR name="new text editor" id="be45388e233227e0" memberName="_textEditorTimeFrag"
-              virtualName="" explicitFocusOrder="0" pos="224 528 464 24" initialText=""
+              virtualName="" explicitFocusOrder="0" pos="224 512 464 24" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
   <TEXTEDITOR name="new text editor" id="97f8435b0fb4ea8d" memberName="_textEditorTimeVetex"
-              virtualName="" explicitFocusOrder="0" pos="224 592 464 24" initialText=""
+              virtualName="" explicitFocusOrder="0" pos="224 552 464 24" initialText=""
+              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
+              caret="1" popupmenu="1"/>
+  <LABEL name="new label" id="8e12ec90409cf2e8" memberName="juce__label3"
+         virtualName="" explicitFocusOrder="0" pos="40 600 150 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="BackGroundFragment" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
+         fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
+  <LABEL name="new label" id="9e37c81fb857aa84" memberName="juce__label4"
+         virtualName="" explicitFocusOrder="0" pos="40 648 150 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="BackGroundVetex" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
+         fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
+  <TEXTEDITOR name="new text editor" id="a2a1d9ddc3677763" memberName="_textEditorBackGroundFragment"
+              virtualName="" explicitFocusOrder="0" pos="224 608 464 24" initialText=""
+              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
+              caret="1" popupmenu="1"/>
+  <TEXTEDITOR name="new text editor" id="d0e4d9d44b368753" memberName="_textEditorBackGroundVetex"
+              virtualName="" explicitFocusOrder="0" pos="224 656 464 24" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
 </JUCER_COMPONENT>
