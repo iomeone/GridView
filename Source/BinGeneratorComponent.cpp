@@ -610,7 +610,7 @@ void BinGeneratorComponent::buttonClicked (juce::Button* buttonThatWasClicked)
     {
         //[UserButtonCode__textButtonxmlSheet] -- add your button handler code here..
 
-		FileChooser myChooser("Please select the sheet XML File.",
+		static FileChooser myChooser("Please select the sheet XML File.",
 			File::getCurrentWorkingDirectory(),
 			//File("C:/Users/user/Desktop/test"),
 			"*.txt"); //"*.dll; *.*""
