@@ -615,7 +615,51 @@ void BinGeneratorComponent::buttonClicked (juce::Button* buttonThatWasClicked)
 			//File("C:/Users/user/Desktop/test"),
 			"*.txt"); //"*.dll; *.*""
 
-		if (myChooser.browseForFileToOpen())
+        auto chooserFlags = FileBrowserComponent::openMode | FileBrowserComponent::canSelectFiles;
+
+        myChooser.launchAsync(chooserFlags, [this](const FileChooser& fc)
+            {
+
+                juce::File xmlFile = fc.getResult();
+                _textEditorxmlSheet->setText(xmlFile.getFullPathName());
+
+                fileName = xmlFile.getFileNameWithoutExtension();
+
+
+                curDir = xmlFile.getParentDirectory();
+
+                String texturePngName = fileName + "msdf.png";
+                checkFile(curDir, texturePngName, _textEditorTexturePng);
+
+
+                checkFile(curDir, "fParticle.txt", _textEditorParticleFragment);
+                checkFile(curDir, "vParticle.txt", _textEditorParticleVetex);
+
+                checkFile(curDir, "fStaffLine.txt", _textEditorstaffFragment2);
+                checkFile(curDir, "vStaffLine.txt", _textEditorstaffVetex);
+
+
+                checkFile(curDir, "fTie.txt", _textEditorTieFragment3);
+                checkFile(curDir, "vTie.txt", _textEditorTieVetex);
+
+
+                checkFile(curDir, "fTime.txt", _textEditorTimeFrag);
+                checkFile(curDir, "vTime.txt", _textEditorTimeVetex);
+
+                checkFile(curDir, "fBackground.txt", _textEditorBackGroundFragment);
+                checkFile(curDir, "vBackground.txt", _textEditorBackGroundVetex);
+
+                String themePngName = fileName + "theme.jpg";
+                checkFile(curDir, themePngName, _textEditorPicture);
+
+
+
+   /*             if (fc.getResult() == File{})
+                    return;
+                loadSettingFile(myChooser.getResult());*/
+
+            });
+	/*	if (myChooser.browseForFileToOpen())
 		{
 			juce::File xmlFile = myChooser.getResult();
 			_textEditorxmlSheet->setText(xmlFile.getFullPathName());
@@ -653,7 +697,7 @@ void BinGeneratorComponent::buttonClicked (juce::Button* buttonThatWasClicked)
 
 
 
-		}
+		}*/
 
         //[/UserButtonCode__textButtonxmlSheet]
     }

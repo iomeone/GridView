@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="WElupj" name="GirdView" projectType="guiapp" jucerFormatVersion="1">
+<JUCERPROJECT id="WElupj" name="GirdView" projectType="guiapp" jucerFormatVersion="1"
+              displaySplashScreen="1">
   <MAINGROUP id="AOExe3" name="GirdView">
     <GROUP id="{3514E724-2336-DDE3-68FC-E1F4722008A1}" name="Source">
       <FILE id="I7omE2" name="ContentComponent.cpp" compile="1" resource="0"

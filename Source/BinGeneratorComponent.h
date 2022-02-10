@@ -50,7 +50,10 @@ public:
 
 	void msg(String s, String title = "caption", AlertWindow::AlertIconType t = AlertWindow::AlertIconType::InfoIcon)
 	{
-		AlertWindow::showMessageBox(t, title, s, "ok");
+		//AlertWindow::showMessageBox(t, title, s, "ok");
+        AlertWindow::showMessageBoxAsync(t,
+            title,
+            s);
 	}
 
 
