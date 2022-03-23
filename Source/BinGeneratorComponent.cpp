@@ -533,17 +533,17 @@ BinGeneratorComponent::BinGeneratorComponent ()
 
     _labelBeatVetex->setBounds (0, 481, 150, 24);
 
-    _textEditorTieFragment2.reset (new juce::TextEditor ("TimelineFragment"));
-    addAndMakeVisible (_textEditorTieFragment2.get());
-    _textEditorTieFragment2->setMultiLine (false);
-    _textEditorTieFragment2->setReturnKeyStartsNewLine (false);
-    _textEditorTieFragment2->setReadOnly (false);
-    _textEditorTieFragment2->setScrollbarsShown (true);
-    _textEditorTieFragment2->setCaretVisible (true);
-    _textEditorTieFragment2->setPopupMenuEnabled (true);
-    _textEditorTieFragment2->setText (juce::String());
+    _textEditorTimelineFragment.reset (new juce::TextEditor ("TimelineFragment"));
+    addAndMakeVisible (_textEditorTimelineFragment.get());
+    _textEditorTimelineFragment->setMultiLine (false);
+    _textEditorTimelineFragment->setReturnKeyStartsNewLine (false);
+    _textEditorTimelineFragment->setReadOnly (false);
+    _textEditorTimelineFragment->setScrollbarsShown (true);
+    _textEditorTimelineFragment->setCaretVisible (true);
+    _textEditorTimelineFragment->setPopupMenuEnabled (true);
+    _textEditorTimelineFragment->setText (juce::String());
 
-    _textEditorTieFragment2->setBounds (179, 525, 460, 24);
+    _textEditorTimelineFragment->setBounds (179, 525, 460, 24);
 
     _labelTimelineFragment.reset (new juce::Label ("TimelineFragment",
                                                    TRANS("TimelineFragment")));
@@ -643,7 +643,7 @@ BinGeneratorComponent::~BinGeneratorComponent()
     _labelBeatFragment = nullptr;
     _textEditorBeatVetex = nullptr;
     _labelBeatVetex = nullptr;
-    _textEditorTieFragment2 = nullptr;
+    _textEditorTimelineFragment = nullptr;
     _labelTimelineFragment = nullptr;
     _textEditorTimelineVetex = nullptr;
     _labelTimelineVetex = nullptr;
@@ -664,13 +664,13 @@ void BinGeneratorComponent::paint (juce::Graphics& g)
     {
         int x = 764, y = 324, width = 316, height = 276;
         //[UserPaintCustomArguments] Customize the painting arguments here..
-     
+ 
         g.setColour(Colours::black);
         g.drawImage(cachedImage_heartandsoulpiano_png_1,
             x, y, width, height,
             0, 0, cachedImage_heartandsoulpiano_png_1.getWidth(), cachedImage_heartandsoulpiano_png_1.getHeight());
-     
-    
+ 
+
         //[/UserPaintCustomArguments]
     }
 
@@ -751,12 +751,12 @@ void BinGeneratorComponent::buttonClicked (juce::Button* buttonThatWasClicked)
                 checkFile(curDir, "vBackground.txt", _textEditorBackGroundVetex);
 
 
-                checkFile(curDir, "fBeat.txt", _textEditorBackGroundFragment);
-                checkFile(curDir, "vBeat.txt", _textEditorBackGroundVetex);
+                checkFile(curDir, "fBeat.txt", _textEditorBeatFragment);
+                checkFile(curDir, "vBeat.txt", _textEditorBeatVetex);
 
 
-                checkFile(curDir, "fTimeline.txt", _textEditorBackGroundFragment);
-                checkFile(curDir, "vTimeline.txt", _textEditorBackGroundVetex);
+                checkFile(curDir, "fTimeline.txt", _textEditorTimelineFragment);
+                checkFile(curDir, "vTimeline.txt", _textEditorTimelineVetex);
 
 
 
@@ -1215,7 +1215,7 @@ BEGIN_JUCER_METADATA
          edBkgCol="0" labelText="BeatVetex" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
-  <TEXTEDITOR name="TimelineFragment" id="612968c386f0dd9a" memberName="_textEditorTieFragment2"
+  <TEXTEDITOR name="TimelineFragment" id="612968c386f0dd9a" memberName="_textEditorTimelineFragment"
               virtualName="" explicitFocusOrder="0" pos="179 525 460 24" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
