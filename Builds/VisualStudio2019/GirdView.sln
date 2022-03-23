@@ -1,5 +1,6 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2019
+# Visual Studio Version 16
 
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GirdView - App", "GirdView_App.vcxproj", "{96077919-FD0E-DF73-B0B3-4220635052DE}"
 EndProject
