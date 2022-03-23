@@ -126,6 +126,14 @@ private:
     std::unique_ptr<juce::Label> juce__label4;
     std::unique_ptr<juce::TextEditor> _textEditorBackGroundFragment;
     std::unique_ptr<juce::TextEditor> _textEditorBackGroundVetex;
+    std::unique_ptr<juce::TextEditor> _textEditorBeatFragment;
+    std::unique_ptr<juce::Label> _labelBeatFragment;
+    std::unique_ptr<juce::TextEditor> _textEditorBeatVetex;
+    std::unique_ptr<juce::Label> _labelBeatVetex;
+    std::unique_ptr<juce::TextEditor> _textEditorTieFragment2;
+    std::unique_ptr<juce::Label> _labelTimelineFragment;
+    std::unique_ptr<juce::TextEditor> _textEditorTimelineVetex;
+    std::unique_ptr<juce::Label> _labelTimelineVetex;
 
 
     //==============================================================================

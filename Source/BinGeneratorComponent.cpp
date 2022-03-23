@@ -487,6 +487,98 @@ BinGeneratorComponent::BinGeneratorComponent ()
 
     _textEditorBackGroundVetex->setBounds (179, 408, 460, 24);
 
+    _textEditorBeatFragment.reset (new juce::TextEditor ("BeatFragment"));
+    addAndMakeVisible (_textEditorBeatFragment.get());
+    _textEditorBeatFragment->setMultiLine (false);
+    _textEditorBeatFragment->setReturnKeyStartsNewLine (false);
+    _textEditorBeatFragment->setReadOnly (false);
+    _textEditorBeatFragment->setScrollbarsShown (true);
+    _textEditorBeatFragment->setCaretVisible (true);
+    _textEditorBeatFragment->setPopupMenuEnabled (true);
+    _textEditorBeatFragment->setText (juce::String());
+
+    _textEditorBeatFragment->setBounds (179, 444, 460, 24);
+
+    _labelBeatFragment.reset (new juce::Label ("BeatFragment",
+                                               TRANS("BeatFragment")));
+    addAndMakeVisible (_labelBeatFragment.get());
+    _labelBeatFragment->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _labelBeatFragment->setJustificationType (juce::Justification::centredLeft);
+    _labelBeatFragment->setEditable (false, false, false);
+    _labelBeatFragment->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _labelBeatFragment->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
+
+    _labelBeatFragment->setBounds (0, 444, 150, 24);
+
+    _textEditorBeatVetex.reset (new juce::TextEditor ("BeatVetex"));
+    addAndMakeVisible (_textEditorBeatVetex.get());
+    _textEditorBeatVetex->setMultiLine (false);
+    _textEditorBeatVetex->setReturnKeyStartsNewLine (false);
+    _textEditorBeatVetex->setReadOnly (false);
+    _textEditorBeatVetex->setScrollbarsShown (true);
+    _textEditorBeatVetex->setCaretVisible (true);
+    _textEditorBeatVetex->setPopupMenuEnabled (true);
+    _textEditorBeatVetex->setText (juce::String());
+
+    _textEditorBeatVetex->setBounds (179, 481, 460, 24);
+
+    _labelBeatVetex.reset (new juce::Label ("BeatVetex",
+                                            TRANS("BeatVetex")));
+    addAndMakeVisible (_labelBeatVetex.get());
+    _labelBeatVetex->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _labelBeatVetex->setJustificationType (juce::Justification::centredLeft);
+    _labelBeatVetex->setEditable (false, false, false);
+    _labelBeatVetex->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _labelBeatVetex->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
+
+    _labelBeatVetex->setBounds (0, 481, 150, 24);
+
+    _textEditorTieFragment2.reset (new juce::TextEditor ("TimelineFragment"));
+    addAndMakeVisible (_textEditorTieFragment2.get());
+    _textEditorTieFragment2->setMultiLine (false);
+    _textEditorTieFragment2->setReturnKeyStartsNewLine (false);
+    _textEditorTieFragment2->setReadOnly (false);
+    _textEditorTieFragment2->setScrollbarsShown (true);
+    _textEditorTieFragment2->setCaretVisible (true);
+    _textEditorTieFragment2->setPopupMenuEnabled (true);
+    _textEditorTieFragment2->setText (juce::String());
+
+    _textEditorTieFragment2->setBounds (179, 525, 460, 24);
+
+    _labelTimelineFragment.reset (new juce::Label ("TimelineFragment",
+                                                   TRANS("TimelineFragment")));
+    addAndMakeVisible (_labelTimelineFragment.get());
+    _labelTimelineFragment->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _labelTimelineFragment->setJustificationType (juce::Justification::centredLeft);
+    _labelTimelineFragment->setEditable (false, false, false);
+    _labelTimelineFragment->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _labelTimelineFragment->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
+
+    _labelTimelineFragment->setBounds (0, 525, 150, 24);
+
+    _textEditorTimelineVetex.reset (new juce::TextEditor ("TimelineVetex"));
+    addAndMakeVisible (_textEditorTimelineVetex.get());
+    _textEditorTimelineVetex->setMultiLine (false);
+    _textEditorTimelineVetex->setReturnKeyStartsNewLine (false);
+    _textEditorTimelineVetex->setReadOnly (false);
+    _textEditorTimelineVetex->setScrollbarsShown (true);
+    _textEditorTimelineVetex->setCaretVisible (true);
+    _textEditorTimelineVetex->setPopupMenuEnabled (true);
+    _textEditorTimelineVetex->setText (juce::String());
+
+    _textEditorTimelineVetex->setBounds (179, 568, 460, 24);
+
+    _labelTimelineVetex.reset (new juce::Label ("TimelineVetex",
+                                                TRANS("TimelineVetex")));
+    addAndMakeVisible (_labelTimelineVetex.get());
+    _labelTimelineVetex->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    _labelTimelineVetex->setJustificationType (juce::Justification::centredLeft);
+    _labelTimelineVetex->setEditable (false, false, false);
+    _labelTimelineVetex->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    _labelTimelineVetex->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
+
+    _labelTimelineVetex->setBounds (0, 568, 150, 24);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -547,6 +639,14 @@ BinGeneratorComponent::~BinGeneratorComponent()
     juce__label4 = nullptr;
     _textEditorBackGroundFragment = nullptr;
     _textEditorBackGroundVetex = nullptr;
+    _textEditorBeatFragment = nullptr;
+    _labelBeatFragment = nullptr;
+    _textEditorBeatVetex = nullptr;
+    _labelBeatVetex = nullptr;
+    _textEditorTieFragment2 = nullptr;
+    _labelTimelineFragment = nullptr;
+    _textEditorTimelineVetex = nullptr;
+    _labelTimelineVetex = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -564,13 +664,13 @@ void BinGeneratorComponent::paint (juce::Graphics& g)
     {
         int x = 764, y = 324, width = 316, height = 276;
         //[UserPaintCustomArguments] Customize the painting arguments here..
-         
+     
         g.setColour(Colours::black);
         g.drawImage(cachedImage_heartandsoulpiano_png_1,
             x, y, width, height,
             0, 0, cachedImage_heartandsoulpiano_png_1.getWidth(), cachedImage_heartandsoulpiano_png_1.getHeight());
-         
-        
+     
+    
         //[/UserPaintCustomArguments]
     }
 
@@ -1066,6 +1166,42 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="179 408 460 24" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
+  <TEXTEDITOR name="BeatFragment" id="d0ed6ed53983f677" memberName="_textEditorBeatFragment"
+              virtualName="" explicitFocusOrder="0" pos="179 444 460 24" initialText=""
+              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
+              caret="1" popupmenu="1"/>
+  <LABEL name="BeatFragment" id="3dfdfcf95a6183d4" memberName="_labelBeatFragment"
+         virtualName="" explicitFocusOrder="0" pos="0 444 150 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="BeatFragment" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
+         fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
+  <TEXTEDITOR name="BeatVetex" id="60ce6409f6429865" memberName="_textEditorBeatVetex"
+              virtualName="" explicitFocusOrder="0" pos="179 481 460 24" initialText=""
+              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
+              caret="1" popupmenu="1"/>
+  <LABEL name="BeatVetex" id="59803e2693b8ec9" memberName="_labelBeatVetex"
+         virtualName="" explicitFocusOrder="0" pos="0 481 150 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="BeatVetex" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
+  <TEXTEDITOR name="TimelineFragment" id="612968c386f0dd9a" memberName="_textEditorTieFragment2"
+              virtualName="" explicitFocusOrder="0" pos="179 525 460 24" initialText=""
+              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
+              caret="1" popupmenu="1"/>
+  <LABEL name="TimelineFragment" id="a246adc3b52ecd28" memberName="_labelTimelineFragment"
+         virtualName="" explicitFocusOrder="0" pos="0 525 150 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="TimelineFragment" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
+         fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
+  <TEXTEDITOR name="TimelineVetex" id="63f36e2be3c019b5" memberName="_textEditorTimelineVetex"
+              virtualName="" explicitFocusOrder="0" pos="179 568 460 24" initialText=""
+              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
+              caret="1" popupmenu="1"/>
+  <LABEL name="TimelineVetex" id="5f5204b61ae6a855" memberName="_labelTimelineVetex"
+         virtualName="" explicitFocusOrder="0" pos="0 568 150 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="TimelineVetex" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
+         fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="33"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
