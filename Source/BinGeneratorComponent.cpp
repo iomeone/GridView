@@ -750,6 +750,16 @@ void BinGeneratorComponent::buttonClicked (juce::Button* buttonThatWasClicked)
                 checkFile(curDir, "fBackground.txt", _textEditorBackGroundFragment);
                 checkFile(curDir, "vBackground.txt", _textEditorBackGroundVetex);
 
+
+                checkFile(curDir, "fBeat.txt", _textEditorBackGroundFragment);
+                checkFile(curDir, "vBeat.txt", _textEditorBackGroundVetex);
+
+
+                checkFile(curDir, "fTimeline.txt", _textEditorBackGroundFragment);
+                checkFile(curDir, "vTimeline.txt", _textEditorBackGroundVetex);
+
+
+
                 String themePngName = fileName + "theme.jpg";
                 checkFile(curDir, themePngName, _textEditorPicture);
 
@@ -931,6 +941,27 @@ void BinGeneratorComponent::buttonClicked (juce::Button* buttonThatWasClicked)
 			sheetBin.setProperty("vBackground", fpFile.loadFileAsString(), nullptr);
 		}
 
+
+
+        {
+            juce::File fpFile = curDir.getChildFile("fBeat.txt");
+            sheetBin.setProperty("fBeat", fpFile.loadFileAsString(), nullptr);
+        }
+        {
+            juce::File fpFile = curDir.getChildFile("vBeat.txt");
+            sheetBin.setProperty("vBeat", fpFile.loadFileAsString(), nullptr);
+        }
+
+
+
+        {
+            juce::File fpFile = curDir.getChildFile("fTimeline.txt");
+            sheetBin.setProperty("fTimeline", fpFile.loadFileAsString(), nullptr);
+        }
+        {
+            juce::File fpFile = curDir.getChildFile("vTimeline.txt");
+            sheetBin.setProperty("vTimeline", fpFile.loadFileAsString(), nullptr);
+        }
 
 
 		sheetBin.setProperty("title", _textEditorTitle->getText(), nullptr);
